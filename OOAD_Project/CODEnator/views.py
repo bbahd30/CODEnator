@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .forms import *
-from rest_framework import viewsets
+from .tag_viewsets import * 
 # from .main_prog import *
 
 # Create your views here.
