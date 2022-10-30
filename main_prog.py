@@ -8,8 +8,8 @@ from imutils import contours
 from ui_extraction import *
 
 
-
-img = cv.imread('UI_ext6.png')              #PUT IN INPUT IMAGE NAME HERE...
+my_dict = {}
+img = cv.imread('yo33.png')              #PUT IN INPUT IMAGE NAME HERE...
 rgb = cv.cvtColor(img, cv.COLOR_BGR2RGB)
 lap1 = img_processing(img)
 img_innit = fillhole(lap1, img)
@@ -116,12 +116,13 @@ for (i, c) in enumerate(cnts):
 
 
 
-    my_dict = {}
+    # my_dict = {}
     key_write = color_finder(x, y, w, h)
     val_write = list_maker(w, h, x, y)
     my_dict[key_write] = val_write
     file_t.write(str(my_dict) + '\n')
-
+    print(my_dict)
+  
 file_t.close()
 # show the output image
 cv.imshow("Image", img)

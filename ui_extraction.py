@@ -1,9 +1,9 @@
 import cv2 as cv
 import numpy as np
 from matplotlib import pyplot as plt
-img = cv.imread('UI_ext.jpg')
+img = cv.imread('yo.jpg')
 def fillhole(input_image, img):
-    filedir = "C:/Users/Manjula/C++/python_opencv/UI_slices"
+    filedir = "CODEnator"
     im_flood_fill = input_image.copy()
     h, w = input_image.shape[:2]
     mask = np.zeros((h + 2, w + 2), np.uint8)
