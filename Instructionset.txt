@@ -1,0 +1,25 @@
+Component     RGB-value        Color-name
+h1            (255,0,0)        Red
+h2            (255,140,0)      Dark Orange
+h3            (154,205,50)     Yellow Greeen
+h4            (32,178,170)     light sea green
+h5            (100,149,237)    Corn flower blue
+h6            (219,112,147)    Pale Violet Red
+<p>            (255,0,255)     Magneta
+<hr>           (0,255,0)       Lime
+<a>            (0,0,128)       Navy
+<img>          (255,215,0)     Gold
+navbar         (250,128,114)   Salmon
+table          (127,255,212)   Aqua Marine
+//row            (255,105,180)   Hot pink
+//coulmn         (139,69,19)     Saddle brown
+footer         (220,20,60)     Crimson
+header         (65,105,225)     Royal Blue
+button         (127,255,0)      Chartreuse
+//scrollbar      (0,191,255)      Deep sky Blue
+dropdown        (88,88,88)     Grey
+Chart          (0,255,127)      Spring green
+Video           (205,92,92)     Indian Red
+Audio           (106,90,205)    Slate Blue
+Sidebar         (218,165,32)    Pale Golden Rod
+
