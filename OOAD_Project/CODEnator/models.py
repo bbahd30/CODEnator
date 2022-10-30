@@ -70,7 +70,7 @@ class Anchor(models.Model):
     link_text = models.CharField(max_length = 400, null = True, blank = True)
     link = models.CharField(max_length = 400, null = True, blank = True)
 
-class Image(models.Model):
+class UserImage(models.Model):
     user_image = models.ImageField(upload_to = 'user_image', null = True)
     
 class Navbar(models.Model):
@@ -94,5 +94,5 @@ class Button(models.Model):
 class Select(models.Model):
     choices = models.JSONField(default=list, blank=True, null=True)
 
-class Sidbar(models.Model):
+class Sidebar(models.Model):
     menu_items = models.JSONField(default=list, blank=True, null=True)
