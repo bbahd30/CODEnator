@@ -20,6 +20,10 @@ class ParagraphViewset(viewsets.ModelViewSet):
     queryset = Paragraph.objects.all()
     serializer_class = ParagraphSerializer
 
+    def get_data(self, request):
+        model_data = ParagraphSerializer(Paragraph.objects.last())
+        return Response(model_data.data)
+
 class HrViewset(viewsets.ModelViewSet):
     queryset = Hr.objects.all()
     serializer_class = HrSerializer
@@ -27,6 +31,10 @@ class HrViewset(viewsets.ModelViewSet):
 class AnchorViewset(viewsets.ModelViewSet):
     queryset = Anchor.objects.all()
     serializer_class = AnchorSerializer
+
+    def get_data(self, request):
+        model_data = AnchorSerializer(Anchor.objects.last())
+        return Response(model_data.data)
 
 class UserImageViewset(viewsets.ModelViewSet):
     queryset = UserImage.objects.all()

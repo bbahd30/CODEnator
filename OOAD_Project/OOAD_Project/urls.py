@@ -37,7 +37,15 @@ urlpatterns = [
     path('tagslatest/', views.TagViewset.as_view
     ({
         'get': 'get_data'
-    }), name='tags')
+    }), name='tags'),
+    path('paragraphslatest/', views.ParagraphViewset.as_view
+    ({
+        'get': 'get_data'
+    }), name='paragraphs'),
+     path('anchorslatest/', views.AnchorViewset.as_view
+    ({
+        'get': 'get_data'
+    }), name='anchors'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
