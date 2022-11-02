@@ -7,6 +7,7 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
+
 router.register(r'images', views.ImageViewset, basename='images'),
 router.register(r'headings', views.HeadingViewset, basename='headings'),
 router.register(r'paragraphs', views.ParagraphViewset, basename='paragraphs'),
@@ -18,15 +19,25 @@ router.register(r'tables', views.TableViewset, basename='tables'),
 router.register(r'buttons', views.ButtonViewset, basename='buttons'),
 router.register(r'selects', views.SelectViewset, basename='selects'),
 router.register(r'sidebars', views.SidebarViewset, basename='sidebars'),
+router.register(r'tags', views.TagViewset, basename='tags'),
 
 
 
 urlpatterns = [
-    path('upload', views.uploader),
+    path('upload/', views.uploader),
     path('admin/', admin.site.urls),
     # path('extract/', views.ui_extract),
     path('', include(router.urls)),
-    path('input', views.input, name='input')
+    path('store/', views.store, name='store'),
+    path('input/', views.input, name='input'),
+    path('imageslatest', views.ImageViewset.as_view
+    ({
+        'get': 'get_data'
+    }), name='store'),
+    path('tagslatest/', views.TagViewset.as_view
+    ({
+        'get': 'get_data'
+    }), name='tags')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

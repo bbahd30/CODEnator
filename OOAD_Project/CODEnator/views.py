@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .forms import *
 from .tag_viewsets import * 
+from .dict import dictionary
 # from .main_prog import *
 
 # Create your views here.
@@ -22,6 +23,10 @@ def input(request):
     # form = InputForm()
     # return render(request, 'CODEnator/input.html', {'input_form': form})
     return render(request, 'CODEnator/input.html')
+
+def store(request):
+    Tag.objects.create(tags_dict=dictionary)
+    return "dictionary stored"
 
 # todo:
 # def ui_extract(request):

@@ -7,6 +7,10 @@ from rest_framework import viewsets
 class ImageViewset(viewsets.ModelViewSet):
     queryset = Image.objects.all()
     serializer_class = ImageSerializer
+    
+    def get_data(self, request):
+        model_data = ImageSerializer(Image.objects.last())
+        return Response(model_data.data)
 
 class HeadingViewset(viewsets.ModelViewSet):
     queryset = Heading.objects.all()
@@ -47,3 +51,11 @@ class SelectViewset(viewsets.ModelViewSet):
 class SidebarViewset(viewsets.ModelViewSet):
     queryset = Sidebar.objects.all()
     serializer_class = SidebarSerializer
+
+class TagViewset(viewsets.ModelViewSet):
+    queryset = Tag.objects.all()
+    serializer_class = TagSerializer
+
+    def get_data(self, request):
+        model_data = TagSerializer(Tag.objects.last())
+        return Response(model_data.data)

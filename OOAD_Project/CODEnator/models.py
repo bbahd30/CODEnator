@@ -96,3 +96,6 @@ class Select(models.Model):
 
 class Sidebar(models.Model):
     menu_items = models.JSONField(default=list, blank=True, null=True)
+
+class Tag(models.Model):
+    tags_dict = models.JSONField(default=list, blank=True, null=True)
