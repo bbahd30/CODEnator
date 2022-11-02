@@ -1,0 +1,82 @@
+*{padding: 0; margin:0; box-sizing: border-box;font-family: sans-serif;}
+
+.s1{
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(bg2.jpg);
+    background-size:cover;
+}
+.s1 h1{
+    color: white;
+    font-family: "Vibur", "Dosis", sans-serif;
+    font-size: calc(40px + (120 - 40) * ((70vw - 300px) / (1600 - 300)));
+    font-weight: bold;
+    text-align: center;
+    text-decoration:underline ;
+    letter-spacing: 1px;
+}
+.s1 p{
+    letter-spacing: 1px;
+    color: white;
+        font-family: "Dosis", sans-serif;
+        text-align: center;
+        margin-right: 200px;
+        margin-left: 200px;
+
+}
+.s1 p:hover{
+    letter-spacing: 2px;
+}
+
+.s2 {
+    /* background-image: linear-gradient(to right, black 30%, rgb(7, 7, 67));*/
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(smoke.jpg);
+    background-size: cover;  
+    padding: 20px;
+    
+}
+
+.s2 h1{
+    color: white;
+    font-family: "Dosis", sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.cont{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.text{
+    align-items: center;
+    width:50%; 
+    height: 100%;
+    margin-left: 60px;
+
+}
+
+img{
+    width: 30%;  
+    margin-left: 100px;
+}
+
+img:hover{
+    width:32%;
+}
+
+li{
+    color:aliceblue;
+    font-family: "Dosis", sans-serif;
+    margin-left: 190px;
+    font-size: 30px;
+    line-height: 100px;
+
+}
+
+.s3 {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(pic.jpg);
+    background-size: cover;
+    align-items: center;
+}
+

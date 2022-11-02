@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODEnator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.12/fullpage.min.css"
+        integrity="sha512-W3G0KdDm94gQSRjzg7HWRLBT3lqAcWtWvnb1Eo5Uo7e6RDzhJW2ldmcOQg06cYqaKrrkIp9AjxIJBbMtVYTtQg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="fullpage.css"> 
+</head>
+<body>
+    <div id="fullpage">
+
+        <section class="section s1">
+            <h1>CODEnator</h1>
+            <p>Convert Image to HTML Code</p>
+        </section>
+        
+        <section class="section s2">
+            <div class="cont">
+            <div class="text">
+                <h1>How to Use?</h1>
+                <ol>
+                    <li>Upload the image</li> 
+                    <li>Download the HTML code</li>
+                </ol>
+            </div>
+            <img src="img.png" alt="ml">
+        </div>
+        </section>
+
+        <section class="section s3">
+        <button type="button" class="btn btn-outline-secondary">Upload image</button>
+        </section>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.12/fullpage.min.js"
+        integrity="sha512-2N6afhHcaOPaBztibhzvEp9MBtXoG+6YQ5AkllMJKHrZKUUiHHmIc1bEafMDjG+LnTtSIYjaKdg2BdZqqZkkBQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        new fullpage('#fullpage',{
+            autoScrolling:true,
+            navigation:true,
+            navigationTooltips:['Home','How to use?','Upload Image'],
+        });
+    </script>
+</body>
+</html>
