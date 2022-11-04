@@ -37,56 +37,56 @@ class Image(models.Model):
     
 class H1(models.Model):
     text = models.CharField(max_length=5000)
-    opening_tag = "<h1>"
-    closing_tag = "</h1>" 
+    opening_tag = models.CharField(max_length=100, default = "<h1>")
+    closing_tag = models.CharField(max_length=100, default = "</h1>") 
 
 class H2(models.Model):
     text = models.CharField(max_length=5000)
-    opening_tag = "<h2>"
-    closing_tag = "</h2>"
+    opening_tag = models.CharField(max_length=100, default = "<h2>")
+    closing_tag = models.CharField(max_length=100, default = "</h2>") 
 
 class H3(models.Model):
     text = models.CharField(max_length=5000)
-    opening_tag = "<h3>"
-    closing_tag = "</h3>"
+    opening_tag = models.CharField(max_length=100, default = "<h3>")
+    closing_tag = models.CharField(max_length=100, default = "</h3>") 
 
 class H4(models.Model):
     text = models.CharField(max_length=5000)
-    opening_tag = "<h4>"
-    closing_tag = "</h4>"
+    opening_tag = models.CharField(max_length=100, default = "<h4>")
+    closing_tag = models.CharField(max_length=100, default = "</h4>") 
 
 class H5(models.Model):
     text = models.CharField(max_length=5000)
-    opening_tag = "<h5>"
-    closing_tag = "</h5>"
+    opening_tag = models.CharField(max_length=100, default = "<h5>")
+    closing_tag = models.CharField(max_length=100, default = "</h5>") 
 
 class H6(models.Model):
     text = models.CharField(max_length=5000)
-    opening_tag = "<h6>"
-    closing_tag = "</h6>"
+    opening_tag = models.CharField(max_length=100, default = "<h6>")
+    closing_tag = models.CharField(max_length=100, default = "</h6>") 
 
 # class Heading(models.Model):
 #     degree = models.IntegerField( null = True, blank = True)
 #     text = models.CharField(max_length=5000, null = True, blank = True)
 
 class Paragraph(models.Model):
-    opening_tag = "<p>"
-    closing_tag = "</p>"
+    opening_tag = models.CharField(max_length=100, default = "<p>")
+    closing_tag = models.CharField(max_length=100, default = "</p>") 
     text = models.CharField(max_length=10000, null = True, blank = True)
 
 class Hr(models.Model):
-    opening_tag = "<hr>"
+    opening_tag = models.CharField(max_length=100, default = "<hr>")
     hr_bool = models.BooleanField(default=False, null = True, blank = True)
 
 class Anchor(models.Model):
-    opening_tag = "<a>"
-    closing_tag = "</a>"
+    opening_tag = models.CharField(max_length=100, default = "<a>")
+    closing_tag = models.CharField(max_length=100, default = "</a>") 
     link_text = models.CharField(max_length = 400, null = True, blank = True)
     link = models.CharField(max_length = 400, null = True, blank = True)
 
 class UserImage(models.Model):
-    opening_tag = "<img>"
-    closing_tag = "</img>"
+    opening_tag = models.CharField(max_length=100, default = "<img>")
+    closing_tag = models.CharField(max_length=100, default = "</img>") 
     user_image = models.ImageField(upload_to = 'user_image', null = True)
     
 class Navbar(models.Model):
@@ -105,8 +105,8 @@ class Table(models.Model):
 # class Footer(models.Model):
 
 class Button(models.Model):
-    opening_tag = "<button>"
-    closing_tag = "</button>"
+    opening_tag = models.CharField(max_length=100, default = "<button>")
+    closing_tag = models.CharField(max_length=100, default = "</button>") 
     text = models.CharField(max_length = 200, null = True, blank = True)
 
 class Select(models.Model):

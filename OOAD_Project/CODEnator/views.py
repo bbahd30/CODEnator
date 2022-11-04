@@ -41,8 +41,8 @@ img = cv.imread("/home/bhoomi/CourseProjects/OOAD/OOAD_Project/CODEnator/yo44.pn
 #     return render(request, 'CODEnator/input.html')
 
 def store(request):
-    # component = ['hr', 'anchor', 'navbar', 'table']
-    Tag.objects.create(tags_dict=components)
+    component = ['paragraph']
+    Tag.objects.create(tags_dict=component)
     return HttpResponse("dictionary stored")
 
 def fillhole(input_image, img):
@@ -255,10 +255,10 @@ def ui_extract(request) :
     # print("SAHIL")
     for i in reversed(my_dict) :
         print(i)
-        if i == (254,0,0) :
+        if i == (236,28,36) :
             f_prg.write("\t<h1>This is Heading</h1>\n")
             components.append('h1')
-        elif i == (255,139,0) :
+        elif i == (255,140,0) :
             f_prg.write("\t<h2>This is Heading</h2>\n")
             components.append('h2')
         elif i == (154,205,50) :
@@ -273,13 +273,13 @@ def ui_extract(request) :
         elif i == (219,112,147) :
             f_prg.write("\t<h6>This is Heading</h6>\n")
             components.append('h6')
-        elif i == (255,0,254) :
+        elif i == (255,0,255) :
             f_prg.write("\t<p>lorem*15</p>\n")
             components.append('paragraph')
         elif i == (0,255,0) :
             f_prg.write("\t<hr>")
             components.append('hr')
-        elif i == (0,0,128) :
+        elif i == (165,42,42) :
             f_prg.write("\t<a>Thisishyperlink.com</a>\n")
             components.append('anchor')
         elif i == (255,215,0) :

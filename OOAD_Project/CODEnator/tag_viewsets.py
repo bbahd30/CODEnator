@@ -16,6 +16,19 @@ class H1Viewset(viewsets.ModelViewSet):
     queryset = H1.objects.all()
     serializer_class = H1Serializer
 
+    def get_data(self, request):
+        model_data = H1Serializer(H1.objects.last())
+        return Response(model_data.data)
+
+    # def create(self, request, **kwargs):
+    #     h1_new = H1.objects.create(
+    #        text = request.data.get('text'),
+    #        opening_tag = "<h1>",
+    #        closing_tag = "</h1>",
+    #    )
+    #     h1_new.save()
+    #     return Response("post")
+
 class H2Viewset(viewsets.ModelViewSet):
     queryset = H2.objects.all()
     serializer_class = H2Serializer

@@ -5,6 +5,7 @@ import * as Links from '../Links';
 import axios from 'axios'; import ParaForm from './Forms/ParaForm';
 import MyDialogBox from './UtilityComponents/MyDialogBox';
 import AnchorForm from './Forms/AnchorForm';
+import H1Form from './Forms/H1Form';
 
 const MainFile = () =>
 {
@@ -48,11 +49,13 @@ const MainFile = () =>
     {
         'paragraph': <ParaForm />,
         'anchor': <AnchorForm />,
+        'h1': <H1Form />
     }
     const keywords =
     {
         'paragraph': "Add Paragraph Text",
         'anchor': "Add Link",
+        'h1': "Add Heading Text"
     }
     return (
 

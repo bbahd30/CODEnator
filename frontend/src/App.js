@@ -1,10 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import InputForm from './Components/InputForm';
-import ImageForm from './Components/Forms/ImageForm';
-import ParaForm from './Components/Forms/ParaForm';
+
 import MainFile from './Components/MainFile';
+import OutputFile from './Components/OutputFile';
 
 function App()
 {
@@ -13,6 +12,7 @@ function App()
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainFile />} />
+          <Route path="/output" element={<OutputFile />} />
         </Routes>
       </BrowserRouter>
 
