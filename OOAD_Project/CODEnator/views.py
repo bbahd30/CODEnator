@@ -41,7 +41,8 @@ img = cv.imread("D:\IIT R 3rd sem\CSN-291\P\CODEnator\OOAD_Project\CODEnator\yo4
 #     return render(request, 'CODEnator/input.html')
 
 def store(request):
-    Tag.objects.create(tags_dict=components)
+    component = ['hr', 'anchor', 'navbar', 'table']
+    Tag.objects.create(tags_dict=component)
     return "dictionary stored"
 
 def fillhole(input_image, img):
