@@ -35,7 +35,7 @@ urlpatterns = [
     # path('extract/', views.ui_extract),
     path('', include(router.urls)),
     path('store/', views.store, name='store'),
-    path('input/', views.input, name='input'),
+    # path('input/', views.input, name='input'),
     path('imageslatest', views.ImageViewset.as_view
     ({
         'get': 'get_data'

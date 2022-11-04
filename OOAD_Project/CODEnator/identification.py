@@ -1,5 +1,6 @@
 # from ast import main
-from main_prog import my_dict
+# from .main_prog import my_dict
+from .main_prog import my_dict
 
 components = []
 f_prg = open("program.html", "w")

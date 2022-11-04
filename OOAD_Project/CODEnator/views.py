@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from .forms import *
 from .tag_viewsets import * 
-from .dict import dictionary
+from .identification import components
+
 # from .main_prog import *
 
 # Create your views here.
@@ -14,18 +15,18 @@ def uploader(request):
     return render(request, 'CODEnator/index.html', {'form': form})
 
 
-def input(request):
-    # if request.method == 'POST':
-    #     form = InputForm(request.POST)
+# def input(request):
+#     # if request.method == 'POST':
+#     #     form = InputForm(request.POST)
 
-    #     if form.is_valid():
-    #         form.save()
-    # form = InputForm()
-    # return render(request, 'CODEnator/input.html', {'input_form': form})
-    return render(request, 'CODEnator/input.html')
+#     #     if form.is_valid():
+#     #         form.save()
+#     # form = InputForm()
+#     # return render(request, 'CODEnator/input.html', {'input_form': form})
+#     return render(request, 'CODEnator/input.html')
 
 def store(request):
-    Tag.objects.create(tags_dict=dictionary)
+    Tag.objects.create(tags_dict=components)
     return "dictionary stored"
 
 # todo:
