@@ -1,15 +1,15 @@
-import cv2 as cv
-import numpy as np
-from matplotlib import pyplot as plt
-from skimage import measure
-import imutils
-import argparse
-from imutils import contours
+# import cv2 as cv
+# import numpy as np
+# from matplotlib import pyplot as plt
+# from skimage import measure
+# import imutils
+# import argparse
+# from imutils import contours
 from ui_extraction import *
 
 
 my_dict = {}
-img = cv.imread('yo33.png')              #PUT IN INPUT IMAGE NAME HERE...
+img = cv.imread('yo44.png')              #PUT IN INPUT IMAGE NAME HERE...
 rgb = cv.cvtColor(img, cv.COLOR_BGR2RGB)
 lap1 = img_processing(img)
 img_innit = fillhole(lap1, img)
