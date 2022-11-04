@@ -16,7 +16,7 @@ from imutils import contours
 my_dict = {}
 components = []
 
-img = cv.imread("D:\IIT R 3rd sem\CSN-291\P\CODEnator\OOAD_Project\CODEnator\yo44.png")
+img = cv.imread("/home/bhoomi/CourseProjects/OOAD/OOAD_Project/CODEnator/yo44.png")
 # cv.imshow("IMAGE",img)
 # from .main_prog import *
 
@@ -41,9 +41,9 @@ img = cv.imread("D:\IIT R 3rd sem\CSN-291\P\CODEnator\OOAD_Project\CODEnator\yo4
 #     return render(request, 'CODEnator/input.html')
 
 def store(request):
-    component = ['hr', 'anchor', 'navbar', 'table']
-    Tag.objects.create(tags_dict=component)
-    return "dictionary stored"
+    # component = ['hr', 'anchor', 'navbar', 'table']
+    Tag.objects.create(tags_dict=components)
+    return HttpResponse("dictionary stored")
 
 def fillhole(input_image, img):
     filedir = "CODEnator"
@@ -78,7 +78,7 @@ def findcontours(input_image):
     contours, hierarchies = cv.findContours(input_image, cv.RETR_LIST, cv.CHAIN_APPROX_SIMPLE)
     blank = np.zeros(img.shape, dtype='uint8')
     cv.drawContours(blank, contours, -1, (0,0,255), 1)
-    cv.imshow('blank', blank)
+    # cv.imshow('blank', blank)
     return contours, hierarchies
 
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
@@ -130,13 +130,13 @@ def ui_extract(request) :
     img_innit = fillhole(lap1, img)
     gray =  cv.cvtColor(img_innit, cv.COLOR_BGR2GRAY)
     blurred = cv.GaussianBlur(gray, (11, 11), 0)
-    cv.imshow('gray', gray)
-    cv.imshow('img_innit', img_innit)
-    cv.imshow('blurred', blurred)
+    # cv.imshow('gray', gray)
+    # cv.imshow('img_innit', img_innit)
+    # cv.imshow('blurred', blurred)
     #Threshold the image to reveal light regions in the blurred image.
 
     thresh = cv.threshold(blurred, 80, 255, cv.THRESH_BINARY)[1]
-    cv.imshow('Threshold', thresh)
+    # cv.imshow('Threshold', thresh)
     #This operation takes any pixel value p>=200, and sets it to 255.
     #Pixel values < 200 are set to 0.
 
@@ -236,16 +236,23 @@ def ui_extract(request) :
         val_write = list_maker(w, h, x, y)
         my_dict[key_write] = val_write
         file_t.write(str(my_dict) + '\n')
-        print(my_dict)
+    print(my_dict)
+    print("SAHIL")
 
     file_t.close()
+    print("SAHIL")
+
     # show the output image
-    cv.imshow("Image", img)
-    cv.waitKey(0)
+    # cv.imshow("Image", img)
+    print("SAHIL")
+
+    cv.waitKey(1)
+    print("SAHIL")
 
     f_prg = open("program.html", "w")
     f_prg.write("<HTML>\n")
     f_prg.write("<BODY>\n")
+    # print("SAHIL")
     for i in reversed(my_dict) :
         print(i)
         if i == (254,0,0) :
@@ -318,6 +325,7 @@ def ui_extract(request) :
                         "\t\t</select>\n")
             components.append('select')
     print(components) 
+    print("tags")
     f_prg.write("</BODY>\n")
     f_prg.write("</HTML>\n")
     f_prg.close()
