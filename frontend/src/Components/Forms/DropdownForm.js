@@ -3,7 +3,8 @@
 import React, { useEffect, useState } from "react";
 import * as Links from "../../Links";
 import axios from "axios";
-import {
+import
+{
   Grid,
   Paper,
   Button,
@@ -14,7 +15,8 @@ import {
 } from "@mui/material";
 import TextField from "@mui/material/TextField";
 
-const dropdownForm = () => {
+const DropdownForm = () =>
+{
   const paperStyle = {
     padding: "10px 20px",
     width: "25vw",
@@ -34,59 +36,78 @@ const dropdownForm = () => {
   const [added, setAdded] = useState(false);
   const [isSubmitClicked, setIsSubmitClicked] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = (e) =>
+  {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) =>
+  {
     setIsSubmitClicked(true);
     e.preventDefault();
     setFormErrors(validate(formValues));
   };
 
-  const validate = (values) => {
+  const validate = (values) =>
+  {
     const errors = {};
     const linkRegex =
       /^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
 
-    if (!values.dropDownlink1_text) {
-      if (!values.dropDownlink1_text) {
+    if (!values.dropDownlink1_text)
+    {
+      if (!values.dropDownlink1_text)
+      {
         errors.dropDownlink1_text = "Link Text is required";
       }
-      if (!values.dropDownlink1) {
+      if (!values.dropDownlink1)
+      {
         errors.dropDownlink1 = "Link is required";
-      } else if (!linkRegex.test(values.dropDownlink1)) {
+      } else if (!linkRegex.test(values.dropDownlink1))
+      {
         errors.dropDownlink1 = "Enter a valid link";
       }
     }
-    if (!values.dropDownlink2_text) {
-      if (!values.dropDownlink2_text) {
+    if (!values.dropDownlink2_text)
+    {
+      if (!values.dropDownlink2_text)
+      {
         errors.dropDownlink2_text = "Link Text is required";
       }
-      if (!values.dropDownlink2) {
+      if (!values.dropDownlink2)
+      {
         errors.dropDownlink2 = "Link is required";
-      } else if (!linkRegex.test(values.dropDownlink2)) {
+      } else if (!linkRegex.test(values.dropDownlink2))
+      {
         errors.dropDownlink2 = "Enter a valid link";
       }
     }
-    if (!values.dropDownlink3_text) {
-      if (!values.dropDownlink3_text) {
+    if (!values.dropDownlink3_text)
+    {
+      if (!values.dropDownlink3_text)
+      {
         errors.dropDownlink3_text = "Link Text is required";
       }
-      if (!values.dropDownlink3) {
+      if (!values.dropDownlink3)
+      {
         errors.dropDownlink3 = "Link is required";
-      } else if (!linkRegex.test(values.dropDownlink3)) {
+      } else if (!linkRegex.test(values.dropDownlink3))
+      {
         errors.dropDownlink3 = "Enter a valid link";
       }
     }
-    if (!values.dropDownlink4_text) {
-      if (!values.dropDownlink4_text) {
+    if (!values.dropDownlink4_text)
+    {
+      if (!values.dropDownlink4_text)
+      {
         errors.dropDownlink4_text = "Link Text is required";
       }
-      if (!values.dropDownlink4) {
+      if (!values.dropDownlink4)
+      {
         errors.dropDownlink4 = "Link is required";
-      } else if (!linkRegex.test(values.dropDownlink4)) {
+      } else if (!linkRegex.test(values.dropDownlink4))
+      {
         errors.dropDownlink4 = "Enter a valid link";
       }
     }
@@ -94,26 +115,33 @@ const dropdownForm = () => {
     return errors;
   };
 
-  const saveToData = (formValues) => {
+  const saveToData = (formValues) =>
+  {
     const data = formValues;
-    const url = Links.post_dropdown_api;
+    const url = Links.post_dropdowns_api;
     axios
       .post(url, data)
-      .then((response) => {
-        if (response.status == 200 || response.status == 201) {
+      .then((response) =>
+      {
+        if (response.status == 200 || response.status == 201)
+        {
           setAdded(true);
         }
       })
-      .catch((error) => {
+      .catch((error) =>
+      {
         console.log(error);
       });
   };
 
-  useEffect(() => {
-    if (Object.keys(formErrors).length === 0 && isSubmitClicked) {
+  useEffect(() =>
+  {
+    if (Object.keys(formErrors).length === 0 && isSubmitClicked)
+    {
       saveToData(formValues);
       setFormValues(initial);
-      setTimeout(() => {
+      setTimeout(() =>
+      {
         setAdded(false);
       }, 4000);
     }
@@ -255,4 +283,4 @@ const dropdownForm = () => {
   );
 };
 
-export default dropdownForm;
+export default DropdownForm;

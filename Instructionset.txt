@@ -10,28 +10,20 @@ h6            (219,112,147)    Pale Violet Red
 <a>            (0,0,128)       Navy
 <img>          (255,215,0)     Gold
 navbar         (250,128,114)   Salmon
-<<<<<<< HEAD
-table          (127,255,212)   Aqua Marine
-//row            (255,105,180)   Hot pink
-//coulmn         (139,69,19)     Saddle brown
-footer         (220,20,60)     Crimson
-header         (65,105,225)     Royal Blue
-button         (127,255,0)      Chartreuse
-//scrollbar      (0,191,255)      Deep sky Blue
-dropdown        (88,88,88)     Grey
-=======
 button         (127,255,0)      Chartreuse
 dropdown      (221,160,221)     Plum
->>>>>>> 4ab9c911e5124f29b1f4e4e36df961bc42a3382d
 Chart          (0,255,127)      Spring green
 Sidebar         (218,165,32)    Pale Golden Rod
 table          (127,255,212)   Aqua Marine
+//row            (255,105,180)   Hot pink
+//coulmn         (139,69,19)     Saddle brown
+//footer         (220,20,60)     Crimson
+//header         (65,105,225)     Royal Blue
+button         (127,255,0)      Chartreuse
+//scrollbar      (0,191,255)      Deep sky Blue
+dropdown        (88,88,88)     Grey
+//Chart          (0,255,127)      Spring green
+//Video           (205,92,92)     Indian Red
+//Audio           (106,90,205)    Slate Blue
+//Sidebar         (218,165,32)    Pale Golden Rod
 
-
-Video           (205,92,92)     Indian Red
-Audio           (106,90,205)    Slate Blue
-row            (255,105,180)   Hot pink
-coulmn         (139,69,19)     Saddle brown
-footer         (220,20,60)     Crimson
-header         (65,105,225)     Royal Blue
-scrollbar      (0,191,255)      Deep sky Blue

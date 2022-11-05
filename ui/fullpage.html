@@ -12,8 +12,9 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="fullpage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kanit&family=Raleway:wght@800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+      <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&family=Raleway:wght@800&display=swap" rel="stylesheet">
 
    
 </head> 
@@ -31,7 +32,16 @@
                     <ul>
                         <li>Read the <button type="button" class="btn btn-outline-secondary" onclick="openPopup()">INSTRUCTION SET</button> for input format.</li>  
                         <li>You have to refer to above instruction set to draw colour filled boxes using ms paint or any other software according to your requirements, and save it as an image.(Warning: It is advised to use the exact code given in the instruction)</li>      
-                        <li><button type="button" class="btn btn-outline-secondary">Upload</button> the image.</li>
+                        <li>
+                            <button type="button" class="btn btn-outline-secondary"><a href = "http://127.0.0.1:8000/upload">Upload</a>
+                            </button> 
+                </button> the image.
+                    </li>
+                    <!-- <li>
+                        <button>
+                            <a href="http://127.0.0.1:8000/store/"></a>
+                        </button>
+                    </li> -->
                         <li><button type="button" class="btn btn-outline-secondary">Download</button> the HTML code.</li>
                     </ul>
                     </div>
@@ -138,6 +148,7 @@
                 <button class="btn btn-outline-danger" onclick="closePopup()"> close </button>
             </div>
         </section>
+        
     </div>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.12/fullpage.min.js"

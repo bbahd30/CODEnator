@@ -9,7 +9,7 @@ from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
 
-router.register(r'images', views.ImageViewset, basename='images'),
+# router.register(r'upload', views.ImageViewset, basename='images'),
 # router.register(r'headings', views.HeadingViewset, basename='headings'),
 router.register(r'h1', views.H1Viewset, basename='h1'), #changed
 router.register(r'h2', views.H2Viewset, basename='h2'), #changed
@@ -31,9 +31,10 @@ router.register(r'tags', views.TagViewset, basename='tags'),
 
 
 urlpatterns = [
-    # path('upload/', views.uploader),
+    path('upload/', views.uploader),
     path('extract/', views.ui_extract),
     path('admin/', admin.site.urls),
+    path('userimage/', views.userimage_uploader),
     # path('extract/', views.ui_extract),
     path('', include(router.urls)),
     path('store/', views.store, name='store'),

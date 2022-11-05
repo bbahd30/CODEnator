@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import * as Links from "../../Links";
 import axios from "axios";
-import {
+import
+{
   Grid,
   Paper,
   Button,
@@ -12,7 +13,8 @@ import {
 } from "@mui/material";
 import TextField from "@mui/material/TextField";
 
-const buttonForm = () => {
+const ButtonForm = () =>
+{
   const paperStyle = {
     padding: "10px 20px",
     width: "25vw",
@@ -25,42 +27,52 @@ const buttonForm = () => {
   const [added, setAdded] = useState(false);
   const [isSubmitClicked, setIsSubmitClicked] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = (e) =>
+  {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) =>
+  {
     setIsSubmitClicked(true);
     e.preventDefault();
     setFormErrors(validate(formValues));
   };
 
-  const validate = (values) => {
+  const validate = (values) =>
+  {
     const errors = {};
     return errors;
   };
 
-  const saveToData = (formValues) => {
+  const saveToData = (formValues) =>
+  {
     const data = formValues;
-    const url = Links.post_button_api;
+    const url = Links.post_buttons_api;
     axios
       .post(url, data)
-      .then((response) => {
-        if (response.status == 200 || response.status == 201) {
+      .then((response) =>
+      {
+        if (response.status == 200 || response.status == 201)
+        {
           setAdded(true);
         }
       })
-      .catch((error) => {
+      .catch((error) =>
+      {
         console.log(error);
       });
   };
 
-  useEffect(() => {
-    if (Object.keys(formErrors).length === 0 && isSubmitClicked) {
+  useEffect(() =>
+  {
+    if (Object.keys(formErrors).length === 0 && isSubmitClicked)
+    {
       saveToData(formValues);
       setFormValues(initial);
-      setTimeout(() => {
+      setTimeout(() =>
+      {
         setAdded(false);
       }, 4000);
     }
@@ -111,4 +123,4 @@ const buttonForm = () => {
   );
 };
 
-export default buttonForm;
+export default ButtonForm;

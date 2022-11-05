@@ -4,7 +4,6 @@ import axios from 'axios'; import { get_anchors_api } from '../../Links';
 const AnchorRenderer = () =>
 {
     const [anchor, setAnchor] = useState([]);
-    const leftM = '30px';
 
     useEffect(() =>
     {
@@ -35,7 +34,7 @@ const AnchorRenderer = () =>
     }, [anchor])
 
     return (
-        <div style={{ position: 'absolute', left: leftM, /* top: '0px'*/ }}>
+        <div style={{ position: 'absolute' }}>
             <a href={anchor.link}>{anchor.link_text}</a>
         </div>
 

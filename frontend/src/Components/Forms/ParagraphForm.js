@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Grid, Paper, Button, MenuItem, Select, InputLabel, FormControl } from '@mui/material';
 import TextField from '@mui/material/TextField';
 
-const ParaForm = () =>
+const ParagraphForm = () =>
 {
     const paperStyle =
     {
@@ -112,4 +112,4 @@ const ParaForm = () =>
     );
 };
 
-export default ParaForm;
+export default ParagraphForm;

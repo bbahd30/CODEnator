@@ -1,9 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
-# from .forms import *
+from .forms import *
 from .tag_viewsets import * 
-# from ...main_prog import my_dict
-# from ...identification import components
 
 import cv2 as cv
 import numpy as np
@@ -16,34 +14,29 @@ from imutils import contours
 my_dict = {}
 components = []
 
-img = cv.imread("/home/bhoomi/CourseProjects/OOAD/OOAD_Project/CODEnator/yo44.png")
-# cv.imshow("IMAGE",img)
-# from .main_prog import *
+img = cv.imread("/home/bhoomi/CourseProjects/OOAD/OOAD_Project/media/screenshots/UI_extract_file.jpg")
 
-# # Create your views here.
-# def uploader(request):
-#     if request.method == 'POST':
-#         form = ImageForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             form.save()
-#     form = ImageForm()
-#     return render(request, 'CODEnator/index.html', {'form': form})
+def uploader(request):
+    if request.method == 'POST':
+        form = ImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+    form = ImageForm()
+    return render(request, 'CODEnator/index.html', {'form': form})
 
 
-# def input(request):
-#     # if request.method == 'POST':
-#     #     form = InputForm(request.POST)
-
-#     #     if form.is_valid():
-#     #         form.save()
-#     # form = InputForm()
-#     # return render(request, 'CODEnator/input.html', {'input_form': form})
-#     return render(request, 'CODEnator/input.html')
+def userimage_uploader(request):
+    if request.method == 'POST':
+        form = UserImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+    form = UserImageForm()
+    return render(request, 'CODEnator/index.html', {'form': form})
 
 def store(request):
-    component = ['paragraph', 'h1', 'anchor']
+    component = ['image', 'h1', 'anchor']
     Tag.objects.create(tags_dict=component)
-    return HttpResponse("dictionary stored")
+    return redirect('http://127.0.0.1:3000/')
 
 def fillhole(input_image, img):
     filedir = "CODEnator"
@@ -240,14 +233,11 @@ def ui_extract(request) :
     print("SAHIL")
 
     file_t.close()
-    print("SAHIL")
 
     # show the output image
     # cv.imshow("Image", img)
-    print("SAHIL")
 
     cv.waitKey(1)
-    print("SAHIL")
 
     f_prg = open("program.html", "w")
     f_prg.write("<HTML>\n")
@@ -329,6 +319,6 @@ def ui_extract(request) :
     f_prg.write("</BODY>\n")
     f_prg.write("</HTML>\n")
     f_prg.close()
-    return HttpResponse("heslj")
+    return redirect("http://127.0.0.1:8000/store")
 
 

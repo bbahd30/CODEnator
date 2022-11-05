@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MainFile from './Components/MainFile';
 import OutputFile from './Components/OutputFile';
+import ImageForm from './Components/Forms/ImageForm';
 
 function App()
 {

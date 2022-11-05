@@ -6,3 +6,8 @@ class ImageForm(forms.ModelForm):
         model = Image
         fields = '__all__'
 
+class UserImageForm(forms.ModelForm):
+    class Meta:
+        model = UserImage
+        fields = ['user_image']
+

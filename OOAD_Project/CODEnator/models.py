@@ -1,10 +1,5 @@
-from distutils.command.upload import upload
-from email.policy import default
-from pyexpat import model
-from random import choices
 from django.db import models
-from django.db.models.signals import pre_save
-from django.dispatch import receiver
+
 import os
 
 def rename_file(instance,filename):
@@ -12,10 +7,7 @@ def rename_file(instance,filename):
     filename = 'UI_extract_file.jpg'
     return os.path.join('screenshots', filename)
 
-
-# Create your models here.
 class Image(models.Model):
-    id = models.AutoField(primary_key=True)
     screenshot = models.ImageField(upload_to = rename_file)
 
 # @receiver(pre_save, sender=Image)
@@ -25,14 +17,6 @@ class Image(models.Model):
     
 #     os.remove(path)
 #     print("Removed")
-
-# note: will do using variables not storing in the db
-# class Component(models.Model):
-#     tag = models.CharField(max_length = 100)
-#     width = models.IntegerField()
-#     height = models.IntegerField()
-#     top = models.IntegerField()
-#     left = models.IntegerField() 
     
 class H1(models.Model):
     text = models.CharField(max_length=5000)
@@ -63,10 +47,6 @@ class H6(models.Model):
     text = models.CharField(max_length=5000)
     opening_tag = models.CharField(max_length=100, default = "<h6>")
     closing_tag = models.CharField(max_length=100, default = "</h6>") 
-
-# class Heading(models.Model):
-#     degree = models.IntegerField( null = True, blank = True)
-#     text = models.CharField(max_length=5000, null = True, blank = True)
 
 class Paragraph(models.Model):
     opening_tag = models.CharField(max_length=100, default = "<p>")
@@ -100,8 +80,6 @@ class Table(models.Model):
     col = models.IntegerField(null = True, blank = True)
     row_data = models.JSONField(default=list, blank=True, null=True)
     col_data = models.JSONField(default=list, blank=True, null=True)
-
-# class Footer(models.Model):
 
 class Button(models.Model):
     opening_tag = models.CharField(max_length=100, default = "<button>")

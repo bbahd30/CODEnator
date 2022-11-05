@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from "react";
 import * as Links from "../../Links";
 import axios from "axios";
-import {
+import
+{
   Grid,
   Paper,
   Button,
-  MenuItem,
-  Select,
-  InputLabel,
-  FormControl,
 } from "@mui/material";
 import TextField from "@mui/material/TextField";
 
-const navbarForm = () => {
+const NavbarForm = () =>
+{
   const paperStyle = {
     padding: "10px 20px",
     width: "25vw",
@@ -30,49 +28,64 @@ const navbarForm = () => {
   const [added, setAdded] = useState(false);
   const [isSubmitClicked, setIsSubmitClicked] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = (e) =>
+  {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) =>
+  {
     setIsSubmitClicked(true);
     e.preventDefault();
     setFormErrors(validate(formValues));
   };
 
-  const validate = (values) => {
+  const validate = (values) =>
+  {
     const errors = {};
     const linkRegex =
       /^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
 
-    if (!values.navlink1_text) {
-      if (!values.navlink1_text) {
+    if (!values.navlink1_text)
+    {
+      if (!values.navlink1_text)
+      {
         errors.navlink1_text = "Link Text is required";
       }
-      if (!values.navlink1) {
+      if (!values.navlink1)
+      {
         errors.navlink1 = "Link is required";
-      } else if (!linkRegex.test(values.navlink1)) {
+      } else if (!linkRegex.test(values.navlink1))
+      {
         errors.navlink1 = "Enter a valid link";
       }
     }
-    if (!values.navlink2_text) {
-      if (!values.navlink2_text) {
+    if (!values.navlink2_text)
+    {
+      if (!values.navlink2_text)
+      {
         errors.navlink2_text = "Link Text is required";
       }
-      if (!values.navlink2) {
+      if (!values.navlink2)
+      {
         errors.navlink2 = "Link is required";
-      } else if (!linkRegex.test(values.navlink2)) {
+      } else if (!linkRegex.test(values.navlink2))
+      {
         errors.navlink2 = "Enter a valid link";
       }
     }
-    if (!values.navlink3_text) {
-      if (!values.navlink3_text) {
+    if (!values.navlink3_text)
+    {
+      if (!values.navlink3_text)
+      {
         errors.navlink3_text = "Link Text is required";
       }
-      if (!values.navlink3) {
+      if (!values.navlink3)
+      {
         errors.navlink3 = "Link is required";
-      } else if (!linkRegex.test(values.navlink3)) {
+      } else if (!linkRegex.test(values.navlink3))
+      {
         errors.navlink3 = "Enter a valid link";
       }
     }
@@ -80,26 +93,33 @@ const navbarForm = () => {
     return errors;
   };
 
-  const saveToData = (formValues) => {
+  const saveToData = (formValues) =>
+  {
     const data = formValues;
-    const url = Links.post_navbar_api;
+    const url = Links.post_navbars_api;
     axios
       .post(url, data)
-      .then((response) => {
-        if (response.status == 200 || response.status == 201) {
+      .then((response) =>
+      {
+        if (response.status == 200 || response.status == 201)
+        {
           setAdded(true);
         }
       })
-      .catch((error) => {
+      .catch((error) =>
+      {
         console.log(error);
       });
   };
 
-  useEffect(() => {
-    if (Object.keys(formErrors).length === 0 && isSubmitClicked) {
+  useEffect(() =>
+  {
+    if (Object.keys(formErrors).length === 0 && isSubmitClicked)
+    {
       saveToData(formValues);
       setFormValues(initial);
-      setTimeout(() => {
+      setTimeout(() =>
+      {
         setAdded(false);
       }, 4000);
     }
@@ -200,6 +220,7 @@ const navbarForm = () => {
               sx={{ marginBottom: "20px" }}
               helperText={formErrors.navlink3}
             />
+
             <Button
               variant="contained"
               onClick={handleSubmit}
@@ -215,4 +236,4 @@ const navbarForm = () => {
   );
 };
 
-export default navbarForm;
+export default NavbarForm;

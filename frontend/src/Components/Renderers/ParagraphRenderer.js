@@ -5,7 +5,6 @@ import { get_paragraphs_api } from '../../Links';
 const ParagraphRenderer = () =>
 {
     const [paragraph, setParagraph] = useState([]);
-
     useEffect(() =>
     {
         const url = get_paragraphs_api;
@@ -34,7 +33,7 @@ const ParagraphRenderer = () =>
     }, [paragraph])
 
     return (
-        <div style={{ position: 'absolute', left: leftM, top: topDistance }}>
+        <div style={{ position: 'relative' }}>
             {paragraph.text}
         </div>
     );

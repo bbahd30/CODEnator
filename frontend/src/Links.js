@@ -28,12 +28,15 @@ export const post_paragraphs_api = `${localhost}paragraphs/`;
 export const post_hrs_api = `${localhost}hrs/`;
 export const post_anchors_api = `${localhost}anchors/`;
 export const post_images_api = `${localhost}images/`;    //to be dealt later
-export const images_upload = `${localhost}upload/`;
 export const post_navbars_api = `${localhost}navbars/`;
 export const post_tables_api = `${localhost}tables/`;
 export const post_buttons_api = `${localhost}buttons/`;
 export const post_selects_api = `${localhost}selects/`;
 
 
+export const upload = `${localhost}upload/`;
+export const images_upload = `${localhost}upload/`;
 
 
+export const post_dropdowns_api = `${localhost}dropdowns/`;
+export const dropdowns_api = `${localhost}dropdownslatest/`;
