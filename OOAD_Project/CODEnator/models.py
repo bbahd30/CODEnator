@@ -7,7 +7,6 @@ from django.db.models.signals import pre_save
 from django.dispatch import receiver
 import os
 
-
 def rename_file(instance,filename):
     upload_to = 'screenshots'
     filename = 'UI_extract_file.jpg'

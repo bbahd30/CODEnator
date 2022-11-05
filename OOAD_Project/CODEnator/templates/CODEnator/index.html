@@ -8,5 +8,15 @@
 </head>
 <body>
     <h1>Image Upload</h1>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit">Submit</button>
+    </form>
+
+    <button type="submit">
+        <a href="http://127.0.0.1:8000/extract">Proceed to extract</a>
+    </button>
+    
 </body>
 </html>

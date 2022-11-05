@@ -1,0 +1,139 @@
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
+    Liberation Mono, monospace;
+}
+
+/*----------------------------------------s1--------------------------------------------------------------------------------------------*/
+
+.s1 {
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url(bg2.jpg);
+  background-size: cover;
+}
+
+.s1 h1 {
+  color: white;
+  font-size: calc(40px + (120 - 40) * ((70vw - 300px) / (1600 - 300)));
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 1px;
+  font-family: 'Kanit', sans-serif;
+}
+
+.s1 p {
+  letter-spacing: 1px;
+  color: white;
+  margin-right: 200px;
+  margin-left: 200px;
+  text-align: center;
+}
+
+.s1 p:hover {
+  letter-spacing: 2px;
+}
+
+/*----------------------------------------------s2-----------------------------------------------------------------------------------------*/
+
+.s2 {
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url(smoke.jpg);
+  background-size: cover;
+  align-items: center;
+}
+
+.s2 h1 {
+  color: aliceblue;
+  font-size: 50px;
+  font-weight: bold;
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
+    Liberation Mono, monospace;
+   
+}
+
+
+.s2 li {
+  color: white;
+}
+.main {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-gap: 20px;
+  width: 1300px;
+  height: 550px;
+  align-items: center;
+}
+.text {
+  justify-content: center;
+  height: 550px;
+  padding-top: 60px;
+  padding-left: 100px;
+}
+
+.image {
+  height: 550px;
+  padding-top: 100px;
+}
+img {
+  width: 400px;
+}
+ul{
+  list-style:square;
+
+}
+
+
+li {
+  color: aliceblue;
+  line-height: 3;
+  font-size: 1rem; 
+}
+
+
+
+.popup {
+  width: 700px;
+  height: 600px;
+  padding-top: 15px;
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.8)
+    ),
+    url(bg.jpg);
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  text-align: center;
+  padding: 0 30px 30px;
+  color: antiquewhite;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+th,
+tr {
+  color: aliceblue;
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
+    Liberation Mono, monospace;
+}
+
+.open-popup {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
