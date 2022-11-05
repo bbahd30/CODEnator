@@ -1,11 +1,13 @@
 import AddIcon from '@mui/icons-material/Add';
-import { Paper } from '@mui/material';
+import { Button, Paper } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import * as Links from '../Links';
-import axios from 'axios'; import ParaForm from './Forms/ParaForm';
+import axios from 'axios';
 import MyDialogBox from './UtilityComponents/MyDialogBox';
-import AnchorForm from './Forms/AnchorForm';
-import H1Form from './Forms/H1Form';
+import ParaForm from '../Components/Forms/ParaForm';
+import AnchorForm from '../Components/Forms/AnchorForm';
+import H1Form from '../Components/Forms/H1Form';
+import { Link } from 'react-router-dom';
 
 const MainFile = () =>
 {
@@ -79,6 +81,11 @@ const MainFile = () =>
                     </div>
                 ))
             }
+            <div>
+                <Button variant="contained">
+                    <Link to={"../output"}>See output</Link>
+                </Button>
+            </div>
         </Paper>
     );
 };

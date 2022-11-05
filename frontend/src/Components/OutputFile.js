@@ -26,7 +26,6 @@ const OutputFile = () =>
             .then
             ((response) =>
             {
-                console.log(response)
                 if (response.status == 200 || response.status == 201)
                 {
                     setTags(response.data.tags_dict)
@@ -37,7 +36,7 @@ const OutputFile = () =>
                 console.log(error);
             });
     }
-
+    let i = 0;
     useEffect(() =>
     {
         fetchTags();
@@ -48,7 +47,9 @@ const OutputFile = () =>
             {
                 tags.map((tag) =>
                 (
-                    tagsMatcher[tag]
+                    <div key={i++}>
+                        {tagsMatcher[tag]}
+                    </div>
                 ))
             }
         </>

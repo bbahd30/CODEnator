@@ -4,8 +4,9 @@ import axios from 'axios'; import { get_anchors_api } from '../../Links';
 const AnchorRenderer = () =>
 {
     const [anchor, setAnchor] = useState([]);
+    const leftM = '30px';
 
-    const fetchAnchorData = () =>
+    useEffect(() =>
     {
         const url = get_anchors_api;
         axios
@@ -25,19 +26,19 @@ const AnchorRenderer = () =>
             {
                 console.log(error);
             });
-    }
+    }, []);
 
     useEffect(() =>
     {
-        fetchAnchorData();
-    }, []);
+        const componentCode = "<a href = '" + anchor.link + "'>" + anchor.link_text + anchor.closing_tag;
+        console.log(componentCode)
+    }, [anchor])
 
     return (
-        <div>
-            {/* anchor.opening_tag
-            anchor.text
-            anchor.closing_tag */}
+        <div style={{ position: 'absolute', left: leftM, /* top: '0px'*/ }}>
+            <a href={anchor.link}>{anchor.link_text}</a>
         </div>
+
     );
 };
 

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios'; import { get_anchors_api } from '../../Links';
+import axios from 'axios';
+// import { get_h1_api } from '../../Links';
+import { get_h1_api } from '../../Links';
 
 const H1Renderer = () =>
 {
@@ -32,11 +34,17 @@ const H1Renderer = () =>
         fetchH1Data();
     }, []);
 
+    useEffect(() =>
+    {
+        const componentCode = h1.opening_tag + h1.text + h1.closing_tag;
+        // todo: need to add this to a file
+    }, [h1])
+
     return (
         <div>
-            {/* anchor.opening_tag
-            anchor.text
-            anchor.closing_tag */}
+            <h1>
+                {h1.text}
+            </h1>
         </div>
     );
 };

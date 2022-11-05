@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios'; import { get_paragraphs_api } from '../../Links';
+import axios from 'axios';
+import { get_paragraphs_api } from '../../Links';
 
 const ParagraphRenderer = () =>
 {
     const [paragraph, setParagraph] = useState([]);
 
-    const fetchParagraphData = () =>
+    useEffect(() =>
     {
         const url = get_paragraphs_api;
         axios
@@ -25,27 +26,16 @@ const ParagraphRenderer = () =>
             {
                 console.log(error);
             });
-    }
-
-    useEffect(() =>
-    {
-        fetchParagraphData();
     }, []);
 
     useEffect(() =>
     {
         const componentCode = paragraph.opening_tag + paragraph.text + paragraph.closing_tag;
-        console.log(componentCode)
     }, [paragraph])
 
     return (
-        <div>
-            {/* {paragraph.opening_tag}
+        <div style={{ position: 'absolute', left: leftM, top: topDistance }}>
             {paragraph.text}
-            {paragraph.closing_tag} */}
-            <p>
-                {paragraph.text}
-            </p>
         </div>
     );
 };

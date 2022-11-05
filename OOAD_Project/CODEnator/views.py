@@ -41,7 +41,7 @@ img = cv.imread("/home/bhoomi/CourseProjects/OOAD/OOAD_Project/CODEnator/yo44.pn
 #     return render(request, 'CODEnator/input.html')
 
 def store(request):
-    component = ['paragraph']
+    component = ['paragraph', 'h1', 'anchor']
     Tag.objects.create(tags_dict=component)
     return HttpResponse("dictionary stored")
 
