@@ -69,8 +69,9 @@ class UserImage(models.Model):
     user_image = models.ImageField(upload_to = 'user_image', null = True)
     
 class Navbar(models.Model):
-    num_of_tabs = models.IntegerField( null = True, blank = True)
+    # num_of_tabs = models.IntegerField( null = True, blank = True)
     tab_text = models.JSONField(default=list, blank=True, null=True)
+    link_text = models.JSONField(default=list, blank=True, null=True)
     # taking number of multiple fields and then take length of array to make the loop 
     # todo:
     # tabs to be stored

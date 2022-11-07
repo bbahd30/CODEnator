@@ -4,6 +4,7 @@ from .serializers import *
 from .models import *
 from rest_framework import viewsets
 from django.http import HttpResponse
+from rest_framework.decorators import action
 
 class ImageViewset(viewsets.ModelViewSet):
     queryset = Image.objects.all()
@@ -68,6 +69,20 @@ class UserImageViewset(viewsets.ModelViewSet):
 class NavbarViewset(viewsets.ModelViewSet):
     queryset = Navbar.objects.all()
     serializer_class = NavbarSerializer
+
+    def create(self, request):
+        data = request.data
+        print("***********88")
+        print(data)
+        arr_tabs_text = data.get('tab_text').split("\n")
+        arr_tabs_link = data.get('link_text').split("\n")
+        Navbar.objects.create(num_of_tabs = data.get('num_of_tabs'), 
+        tab_text = arr_tabs_text, link_text = arr_tabs_link)
+        return Response("done")
+
+    def get_data(self, request):
+        model_data = NavbarSerializer(Navbar.objects.last())
+        return Response(model_data.data)
 
 class TableViewset(viewsets.ModelViewSet):
     queryset = Table.objects.all()

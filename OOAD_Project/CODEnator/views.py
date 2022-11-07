@@ -34,8 +34,9 @@ def userimage_uploader(request):
     return render(request, 'CODEnator/index.html', {'form': form})
 
 def store(request):
-    component = ['image', 'h1', 'anchor']
-    Tag.objects.create(tags_dict=component)
+    # component = ['image', 'h1', 'anchor']
+    Tag.objects.create(tags_dict=components)
+    components.clear()
     return redirect('http://127.0.0.1:3000/')
 
 def fillhole(input_image, img):
@@ -113,7 +114,7 @@ def ui_extract(request) :
     # from ast import main
 # from .main_prog import my_dict
 # from .main_prog import my_dict
-    print("chala")
+    # components = []
     # print(my_dict)
     # cv.imshow("IMAGE",img)
     # my_dict = {}
@@ -274,7 +275,7 @@ def ui_extract(request) :
             components.append('anchor')
         elif i == (255,215,0) :
             f_prg.write("   <img src=\"image.jpg\" alt=\"Your face\" width=\"42\" height=\"42\">\n")
-            components.append('anchor')
+            components.append('image')
         elif i == (250,128,114) :
             f_prg.write("\t<ul>\n"
                                 "\t\t<li style = \"float:left\"><a href=\"#home\">Home</a></li>\n"

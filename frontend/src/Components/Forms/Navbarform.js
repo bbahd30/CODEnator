@@ -8,6 +8,7 @@ import
   Button,
 } from "@mui/material";
 import TextField from "@mui/material/TextField";
+import { Textarea } from 'evergreen-ui'
 
 const NavbarForm = () =>
 {
@@ -16,12 +17,9 @@ const NavbarForm = () =>
     width: "25vw",
   };
   const initial = {
-    navlink1_text: "",
-    navlink1: "",
-    navlink2_text: "",
-    navlink2: "",
-    navlink3_text: "",
-    navlink3: "",
+    num_of_tabs: "",
+    tab_text: "",
+    link_text: "",
   };
   const [formValues, setFormValues] = useState(initial);
   const [formErrors, setFormErrors] = useState([]);
@@ -32,6 +30,7 @@ const NavbarForm = () =>
   {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
+
   };
 
   const handleSubmit = (e) =>
@@ -44,51 +43,51 @@ const NavbarForm = () =>
   const validate = (values) =>
   {
     const errors = {};
-    const linkRegex =
-      /^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
+    // const linkRegex =
+    //   /^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
 
-    if (!values.navlink1_text)
-    {
-      if (!values.navlink1_text)
-      {
-        errors.navlink1_text = "Link Text is required";
-      }
-      if (!values.navlink1)
-      {
-        errors.navlink1 = "Link is required";
-      } else if (!linkRegex.test(values.navlink1))
-      {
-        errors.navlink1 = "Enter a valid link";
-      }
-    }
-    if (!values.navlink2_text)
-    {
-      if (!values.navlink2_text)
-      {
-        errors.navlink2_text = "Link Text is required";
-      }
-      if (!values.navlink2)
-      {
-        errors.navlink2 = "Link is required";
-      } else if (!linkRegex.test(values.navlink2))
-      {
-        errors.navlink2 = "Enter a valid link";
-      }
-    }
-    if (!values.navlink3_text)
-    {
-      if (!values.navlink3_text)
-      {
-        errors.navlink3_text = "Link Text is required";
-      }
-      if (!values.navlink3)
-      {
-        errors.navlink3 = "Link is required";
-      } else if (!linkRegex.test(values.navlink3))
-      {
-        errors.navlink3 = "Enter a valid link";
-      }
-    }
+    // if (!values.navlink1_text)
+    // {
+    //   if (!values.navlink1_text)
+    //   {
+    //     errors.navlink1_text = "Link Text is required";
+    //   }
+    //   if (!values.navlink1)
+    //   {
+    //     errors.navlink1 = "Link is required";
+    //   } else if (!linkRegex.test(values.navlink1))
+    //   {
+    //     errors.navlink1 = "Enter a valid link";
+    //   }
+    // }
+    // if (!values.navlink2_text)
+    // {
+    //   if (!values.navlink2_text)
+    //   {
+    //     errors.navlink2_text = "Link Text is required";
+    //   }
+    //   if (!values.navlink2)
+    //   {
+    //     errors.navlink2 = "Link is required";
+    //   } else if (!linkRegex.test(values.navlink2))
+    //   {
+    //     errors.navlink2 = "Enter a valid link";
+    //   }
+    // }
+    // if (!values.navlink3_text)
+    // {
+    //   if (!values.navlink3_text)
+    //   {
+    //     errors.navlink3_text = "Link Text is required";
+    //   }
+    //   if (!values.navlink3)
+    //   {
+    //     errors.navlink3 = "Link is required";
+    //   } else if (!linkRegex.test(values.navlink3))
+    //   {
+    //     errors.navlink3 = "Enter a valid link";
+    //   }
+    // }
 
     return errors;
   };
@@ -139,86 +138,48 @@ const NavbarForm = () =>
         ) : (
           <div></div>
         )}
-
         <Grid>
           <form onSubmit={handleSubmit} alignitem={"center"}>
             <TextField
               id="outlined-basic"
-              label="navLink1 Text"
-              placeholder="Enter navLink1 Text"
+              label="Number of Tabs"
+              placeholder="Enter Number of Tabs You Want"
               variant="outlined"
               fullWidth
               onChange={handleChange}
-              name="navlink1_text"
-              value={formValues.navlink1_text}
-              error={Boolean(formErrors.navlink1_text)}
+              name="num_of_tabs"
+              type="number"
+              value={formValues.num_of_tabs}
+              error={Boolean(formErrors.num_of_tabs)}
               sx={{ marginBottom: "20px" }}
-              helperText={formErrors.navlink1_text}
+              helperText={formErrors.num_of_tabs}
             />
-            <TextField
+            <Textarea
               id="outlined-basic"
-              label="navLink1"
-              placeholder="Enter navLink1"
+              label="tab_text"
+              placeholder="Enter Text For Tabs"
               variant="outlined"
               fullWidth
               onChange={handleChange}
-              name="navlink1"
-              value={formValues.navlink1}
-              error={Boolean(formErrors.navlink1)}
+              name="tab_text"
+              value={formValues.tab_text}
+              error={Boolean(formErrors.tab_text)}
               sx={{ marginBottom: "20px" }}
-              helperText={formErrors.navlink1}
+              helperText={formErrors.tab_text}
             />
-            <TextField
+
+            <Textarea
               id="outlined-basic"
-              label="navLink2 Text"
-              placeholder="Enter navLink2 Text"
+              label="link_text"
+              placeholder="Enter Links For Tabs"
               variant="outlined"
               fullWidth
               onChange={handleChange}
-              name="navlink2_text"
-              value={formValues.navlink2_text}
-              error={Boolean(formErrors.navlink2_text)}
+              name="link_text"
+              value={formValues.link_text}
+              error={Boolean(formErrors.link_text)}
               sx={{ marginBottom: "20px" }}
-              helperText={formErrors.navlink2_text}
-            />
-            <TextField
-              id="outlined-basic"
-              label="navLink2"
-              placeholder="Enter navLink2"
-              variant="outlined"
-              fullWidth
-              onChange={handleChange}
-              name="navlink2"
-              value={formValues.navlink2}
-              error={Boolean(formErrors.navlink2)}
-              sx={{ marginBottom: "20px" }}
-              helperText={formErrors.navlink2}
-            />
-            <TextField
-              id="outlined-basic"
-              label="navLink3 Text"
-              placeholder="Enter navLink1 Text"
-              variant="outlined"
-              fullWidth
-              onChange={handleChange}
-              name="navlink3_text"
-              value={formValues.navlink3_text}
-              error={Boolean(formErrors.navlink3_text)}
-              sx={{ marginBottom: "20px" }}
-              helperText={formErrors.navlink3_text}
-            />
-            <TextField
-              id="outlined-basic"
-              label="navLink3"
-              placeholder="Enter navLink1"
-              variant="outlined"
-              fullWidth
-              onChange={handleChange}
-              name="navlink3"
-              value={formValues.navlink3}
-              error={Boolean(formErrors.navlink3)}
-              sx={{ marginBottom: "20px" }}
-              helperText={formErrors.navlink3}
+              helperText={formErrors.link_text}
             />
 
             <Button
