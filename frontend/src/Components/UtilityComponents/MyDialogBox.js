@@ -62,9 +62,9 @@ export default function MyDialogBox(props)
 
     return (
         <>
-            <Button variant="contained" onClick={handleClickOpen} >
+            <button className='btn btn-outline-light' onClick={handleClickOpen} >
                 {props.buttonChild}
-            </Button>
+            </button>
             <BootstrapDialog
                 onClose={handleClose}
                 aria-labelledby="customized-dialog-title"
