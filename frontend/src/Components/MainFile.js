@@ -16,6 +16,7 @@ import NavbarForm from './Forms/Navbarform';
 import DropdownForm from './Forms/DropdownForm'
 import ImageForm from './Forms/ImageForm';
 import ButtonForm from './Forms/ButtonForm';
+import './mainfile.css';
 
 import { Link } from 'react-router-dom';
 
@@ -27,6 +28,11 @@ const MainFile = () =>
         margin: '15vh auto',
         width: '60vw',
         height: '60vh'
+    }
+    const formdivStyle=
+    {
+        
+
     }
     const [tags, setTags] = useState([]);
 
@@ -52,9 +58,12 @@ const MainFile = () =>
             });
     }
 
+    
     useEffect(() =>
     {
         fetchTagsNeeded();
+        const dum_arr = ['image' , 'anchor'];
+        setTags(dum_arr);
     }, []);
 
     const formsToRender =
@@ -90,21 +99,30 @@ const MainFile = () =>
     }
 
     const index = tags.indexOf('hr');
-
     return (
+        
 
-        <Paper elevation={3} style={paperStyle}>
+        <div className='formdiv'>
+            
+            <div className='dividepage'>
+            
+            {/* <div className='formlist'></div> */}
+            <div className='formlist'>
+        {/* <Paper elevation={3} style={paperStyle}> */}
             {
                 tags.map((tag) =>
                 {
                     return tag === 'hr' ? "" :
                         (
-                            <div key={i++}>
+                            
+                            <div className="Button" key={i++}>
                                 <MyDialogBox
 
                                     buttonChild=
                                     {
-                                        <AddIcon sx={{ fontSize: "40px" }} />
+                                        // <AddIcon sx={{ fontSize: "40px" }} />
+                                        `Form ${i} Type: ${tags[(i-1)]}`
+                                        
                                     }
                                     dataChild=
                                     {
@@ -116,12 +134,16 @@ const MainFile = () =>
                         )
                 })
             }
-            <div>
-                <Button variant="contained">
+            <div className='buttondiv'>
+                <button className='seeoutput'>
                     <Link to={"../output"}>See output</Link>
-                </Button>
+                </button>
             </div>
-        </Paper>
+        {/* </Paper> */}
+        </div>
+        </div>
+        </div>
+
     );
 };
 
