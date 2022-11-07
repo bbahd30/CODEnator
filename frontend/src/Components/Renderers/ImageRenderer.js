@@ -42,7 +42,7 @@ const ImageRenderer = () =>
 
     return (
         <div>
-            <image>
+            <image style={{textAlign: "center",height:"500px",width:"500px"}}>
                 {image.text}
             </image>
         </div>

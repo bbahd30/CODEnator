@@ -42,7 +42,7 @@ const H3Renderer = () =>
 
     return (
         <div>
-            <h3>
+            <h3 style={{textAlign: "center",margin:"20px",fontSize:"35px"}}>
                 {h3.text}
             </h3>
         </div>

@@ -43,7 +43,9 @@ const ButtonRenderer = () =>
 
     return (
         <div>
-            <Button variant='contained' sx={{ margin: '20px' }}>{button.text}</Button>
+            <button style={{textAlign: "center",margin:"30px",fontSize:"20px",padding:"10px",borderRadius:"10px"}}>
+                {button.text}
+            </button>
         </div>
     );
 };

@@ -42,7 +42,7 @@ const TableRenderer = () =>
 
     return (
         <div>
-            <table>
+            <table style={{textAlign: "center",margin:"30px",fontSize:"20px"}}>
                 {table.text}
             </table>
         </div>

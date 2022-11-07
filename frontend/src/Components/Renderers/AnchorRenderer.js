@@ -34,7 +34,7 @@ const AnchorRenderer = () =>
     }, [anchor])
 
     return (
-        <div style={{ position: 'absolute' }}>
+        <div style={{textAlign: "center",margin:"10px",fontSize:"20px"}}>
             <a href={anchor.link}>{anchor.link_text}</a>
         </div>
 

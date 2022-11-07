@@ -33,7 +33,7 @@ const ParagraphRenderer = () =>
     }, [paragraph])
 
     return (
-        <div style={{ position: 'relative' }}>
+        <div style={{textAlign: "center",margin:"20px",fontSize:"20px"}}>
             {paragraph.text}
         </div>
     );
