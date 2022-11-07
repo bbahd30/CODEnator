@@ -42,7 +42,7 @@ const H2Renderer = () =>
 
     return (
         <div>
-            <h2>
+            <h2 style={{textAlign: "center",margin:"25px",fontSize:"40px"}}>
                 {h2.text}
             </h2>
         </div>

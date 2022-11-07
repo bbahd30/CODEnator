@@ -42,7 +42,7 @@ const H5Renderer = () =>
 
     return (
         <div>
-            <h5>
+            <h5 style={{textAlign: "center",margin:"10px",fontSize:"25px"}}>
                 {h5.text}
             </h5>
         </div>

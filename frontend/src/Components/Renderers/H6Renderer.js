@@ -42,7 +42,7 @@ const H6Renderer = () =>
 
     return (
         <div>
-            <h6>
+            <h6 style={{textAlign: "center",margin:"5px",fontSize:"20px"}}>
                 {h6.text}
             </h6>
         </div>

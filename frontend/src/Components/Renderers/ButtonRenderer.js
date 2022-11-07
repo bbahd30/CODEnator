@@ -42,7 +42,7 @@ const ButtonRenderer = () =>
 
     return (
         <div>
-            <button>
+            <button style={{textAlign: "center",margin:"30px",fontSize:"20px",padding:"10px",borderRadius:"10px"}}>
                 {button.text}
             </button>
         </div>
