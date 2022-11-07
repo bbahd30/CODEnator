@@ -24,9 +24,9 @@ router.register(r'userimages', views.UserImageViewset, basename='userimages'),
 router.register(r'navbars', views.NavbarViewset, basename='navbars'),
 router.register(r'tables', views.TableViewset, basename='tables'),
 router.register(r'buttons', views.ButtonViewset, basename='buttons'),
-router.register(r'selects', views.SelectViewset, basename='selects'),
 # router.register(r'sidebars', views.SidebarViewset, basename='sidebars'),
 router.register(r'tags', views.TagViewset, basename='tags'),
+router.register(r'dropdowns', views.DropdownViewset, basename='dropdowns'),
 
 
 
@@ -91,10 +91,14 @@ urlpatterns = [
     ({
         'get': 'get_data'
     }), name='tables'),
-    path('selectslatest/', views.SelectViewset.as_view
+    path('buttonslatest/', views.ButtonViewset.as_view
     ({
         'get': 'get_data'
-    }), name='selects'),
+    }), name='buttons'),
+    path('dropdownslatest/', views.DropdownViewset.as_view
+    ({
+        'get': 'get_data'
+    }), name='dropdowns'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

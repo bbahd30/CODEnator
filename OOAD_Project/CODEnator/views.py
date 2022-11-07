@@ -14,7 +14,7 @@ from imutils import contours
 my_dict = {}
 components = []
 
-img = cv.imread("/home/bhoomi/CourseProjects/OOAD/OOAD_Project/media/screenshots/UI_extract_file.jpg")
+img = cv.imread("/home/bhoomi/CourseProjects/OOAD/OOAD_Project/media/screenshots/UI_extract_file.png")
 
 def uploader(request):
     if request.method == 'POST':

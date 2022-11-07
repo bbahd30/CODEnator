@@ -7,7 +7,6 @@ import
   Paper,
   Button,
 } from "@mui/material";
-import TextField from "@mui/material/TextField";
 import { Textarea } from 'evergreen-ui'
 
 const NavbarForm = () =>
@@ -17,7 +16,6 @@ const NavbarForm = () =>
     width: "25vw",
   };
   const initial = {
-    num_of_tabs: "",
     tab_text: "",
     link_text: "",
   };
@@ -140,20 +138,6 @@ const NavbarForm = () =>
         )}
         <Grid>
           <form onSubmit={handleSubmit} alignitem={"center"}>
-            <TextField
-              id="outlined-basic"
-              label="Number of Tabs"
-              placeholder="Enter Number of Tabs You Want"
-              variant="outlined"
-              fullWidth
-              onChange={handleChange}
-              name="num_of_tabs"
-              type="number"
-              value={formValues.num_of_tabs}
-              error={Boolean(formErrors.num_of_tabs)}
-              sx={{ marginBottom: "20px" }}
-              helperText={formErrors.num_of_tabs}
-            />
             <Textarea
               id="outlined-basic"
               label="tab_text"
@@ -167,7 +151,6 @@ const NavbarForm = () =>
               sx={{ marginBottom: "20px" }}
               helperText={formErrors.tab_text}
             />
-
             <Textarea
               id="outlined-basic"
               label="link_text"

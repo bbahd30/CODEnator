@@ -71,9 +71,9 @@ class ButtonSerializer(serializers.ModelSerializer):
         model = Button
         fields = '__all__'
 
-class SelectSerializer(serializers.ModelSerializer):
+class DropdownSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Select
+        model = Dropdown
         fields = '__all__'
 
 # class SidebarSerializer(serializers.ModelSerializer):

@@ -3,20 +3,11 @@ import axios from 'axios';
 // import { get_navbar_api } from '../../Links';
 import { get_navbars_api } from '../../Links';
 import { AppBar, Avatar, Button, Paper, Toolbar, Typography, Container } from '@mui/material';
-import Icon from '@mui/material/Icon';
-import WorkHistoryIcon from '@mui/icons-material/WorkHistory';
-import { Link } from 'react-router-dom';
-
-import AccountBoxIcon from '@mui/icons-material/AccountBox';
-import MenuIcon from '@mui/icons-material/Menu';
 
 
 const NavbarRenderer = () =>
 {
     const [navbar, setNavbar] = useState(null);
-
-    // const toggleDrawer = props.toggleFunction;
-    const logoStyle = { marginRight: "20px", marginTop: '9%' }
 
     const fetchNavbarData = () =>
     {
@@ -63,7 +54,6 @@ const NavbarRenderer = () =>
         // todo: need to add this to a file
     }, [navbar])
     let i = 0;
-    console.log(i)
 
     return (
         <>

@@ -1,5 +1,3 @@
-import AddIcon from '@mui/icons-material/Add';
-import { Button, Paper } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import * as Links from '../Links';
 import axios from 'axios';
@@ -29,9 +27,9 @@ const MainFile = () =>
         width: '60vw',
         height: '60vh'
     }
-    const formdivStyle=
+    const formdivStyle =
     {
-        
+
 
     }
     const [tags, setTags] = useState([]);
@@ -58,11 +56,11 @@ const MainFile = () =>
             });
     }
 
-    
+
     useEffect(() =>
     {
         fetchTagsNeeded();
-        const dum_arr = ['image' , 'anchor'];
+        const dum_arr = ['image', 'anchor'];
         setTags(dum_arr);
     }, []);
 
@@ -100,48 +98,48 @@ const MainFile = () =>
 
     const index = tags.indexOf('hr');
     return (
-        
+
 
         <div className='formdiv'>
-            
-            <div className='dividepage'>
-            
-            {/* <div className='formlist'></div> */}
-            <div className='formlist'>
-        {/* <Paper elevation={3} style={paperStyle}> */}
-            {
-                tags.map((tag) =>
-                {
-                    return tag === 'hr' ? "" :
-                        (
-                            
-                            <div className="Button" key={i++}>
-                                <MyDialogBox
 
-                                    buttonChild=
-                                    {
-                                        // <AddIcon sx={{ fontSize: "40px" }} />
-                                        `Form ${i} Type: ${tags[(i-1)]}`
-                                        
-                                    }
-                                    dataChild=
-                                    {
-                                        formsToRender[tag]
-                                    }
-                                    title={keywords[tag]}
-                                />
-                            </div>
-                        )
-                })
-            }
-            <div className='buttondiv'>
-                <button className='seeoutput'>
-                    <Link to={"../output"}>See output</Link>
-                </button>
+            <div className='dividepage'>
+
+                {/* <div className='formlist'></div> */}
+                <div className='formlist'>
+                    {/* <Paper elevation={3} style={paperStyle}> */}
+                    {
+                        tags.map((tag) =>
+                        {
+                            return tag === 'hr' ? "" :
+                                (
+
+                                    <div className="Button" key={i++}>
+                                        <MyDialogBox
+
+                                            buttonChild=
+                                            {
+                                                // <AddIcon sx={{ fontSize: "40px" }} />
+                                                `Form ${i} Type: ${tag}`
+
+                                            }
+                                            dataChild=
+                                            {
+                                                formsToRender[tag]
+                                            }
+                                            title={keywords[tag]}
+                                        />
+                                    </div>
+                                )
+                        })
+                    }
+                    <div className='buttondiv'>
+                        <button className='seeoutput'>
+                            <Link to={"../output"}>See output</Link>
+                        </button>
+                    </div>
+                    {/* </Paper> */}
+                </div>
             </div>
-        {/* </Paper> */}
-        </div>
-        </div>
         </div>
 
     );

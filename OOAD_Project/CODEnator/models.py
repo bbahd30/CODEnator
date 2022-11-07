@@ -87,9 +87,9 @@ class Button(models.Model):
     closing_tag = models.CharField(max_length=100, default = "</button>") 
     text = models.CharField(max_length = 200, null = True, blank = True)
 
-class Select(models.Model):
-    choices = models.JSONField(default=list, blank=True, null=True)
-
+class Dropdown(models.Model):
+    field = models.CharField(max_length=100, null = True, blank = True)
+    options = models.JSONField(default=list, blank=True, null=True)
 # class Sidbar(models.Model):
 #     menu_items = models.JSONField(default=list, blank=True, null=True)
 

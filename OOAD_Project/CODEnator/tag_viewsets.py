@@ -92,10 +92,24 @@ class ButtonViewset(viewsets.ModelViewSet):
     queryset = Button.objects.all()
     serializer_class = ButtonSerializer
 
-class SelectViewset(viewsets.ModelViewSet):
-    queryset = Select.objects.all()
-    serializer_class = SelectSerializer
+    def get_data(self, request):
+        model_data = ButtonSerializer(Button.objects.last())
+        return Response(model_data.data)
 
+class DropdownViewset(viewsets.ModelViewSet):
+    queryset = Dropdown.objects.all()
+    serializer_class = DropdownSerializer
+
+    def create(self, request):
+        data = request.data
+        field = data.get('field')
+        arr_options = data.get('options').split("\n")
+        Dropdown.objects.create(options = arr_options, field = field)
+        return Response("done")
+    
+    def get_data(self, request):
+        model_data = DropdownSerializer(Dropdown.objects.last())
+        return Response(model_data.data)
 # class SidebarViewset(viewsets.ModelViewSet):
 #     queryset = Sidebar.objects.all()
 #     serializer_class = SidebarSerializer

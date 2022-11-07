@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 // import { get_image_api } from '../../Links';
-import { get_image_api } from '../../Links';
+import { get_images_api } from '../../Links';
 
 const ImageRenderer = () =>
 {
@@ -9,7 +9,7 @@ const ImageRenderer = () =>
 
     const fetchImageData = () =>
     {
-        const url = get_image_api;
+        const url = get_images_api;
         axios
             .get
             (

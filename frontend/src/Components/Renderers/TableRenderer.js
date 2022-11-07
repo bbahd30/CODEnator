@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 // import { get_table_api } from '../../Links';
-import { get_table_api } from '../../Links';
+import { get_tables_api } from '../../Links';
 
 const TableRenderer = () =>
 {
@@ -9,7 +9,7 @@ const TableRenderer = () =>
 
     const fetchTableData = () =>
     {
-        const url = get_table_api;
+        const url = get_tables_api;
         axios
             .get
             (

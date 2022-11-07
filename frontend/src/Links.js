@@ -39,4 +39,4 @@ export const images_upload = `${localhost}upload/`;
 
 
 export const post_dropdowns_api = `${localhost}dropdowns/`;
-export const dropdowns_api = `${localhost}dropdownslatest/`;
+export const get_dropdowns_api = `${localhost}dropdownslatest/`;
