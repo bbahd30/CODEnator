@@ -4,7 +4,8 @@ from django import forms
 class ImageForm(forms.ModelForm):
     class Meta:
         model = Image
-        fields = '__all__'
+        fields = ['screenshot']
+            # widget = forms.Select(attrs = {'onchange': 'submit();'})
 
 class UserImageForm(forms.ModelForm):
     class Meta:

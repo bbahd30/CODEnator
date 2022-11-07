@@ -69,8 +69,9 @@ class UserImage(models.Model):
     user_image = models.ImageField(upload_to = 'user_image', null = True)
     
 class Navbar(models.Model):
-    num_of_tabs = models.IntegerField( null = True, blank = True)
+    # num_of_tabs = models.IntegerField( null = True, blank = True)
     tab_text = models.JSONField(default=list, blank=True, null=True)
+    link_text = models.JSONField(default=list, blank=True, null=True)
     # taking number of multiple fields and then take length of array to make the loop 
     # todo:
     # tabs to be stored
@@ -86,9 +87,9 @@ class Button(models.Model):
     closing_tag = models.CharField(max_length=100, default = "</button>") 
     text = models.CharField(max_length = 200, null = True, blank = True)
 
-class Select(models.Model):
-    choices = models.JSONField(default=list, blank=True, null=True)
-
+class Dropdown(models.Model):
+    field = models.CharField(max_length=100, null = True, blank = True)
+    options = models.JSONField(default=list, blank=True, null=True)
 # class Sidbar(models.Model):
 #     menu_items = models.JSONField(default=list, blank=True, null=True)
 

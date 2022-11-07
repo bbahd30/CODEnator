@@ -4,15 +4,17 @@ import React, { useEffect, useState } from "react";
 import * as Links from "../../Links";
 import axios from "axios";
 import
-  {
-    Grid,
-    Paper,
-    Button,
-    MenuItem,
-    Select,
-    InputLabel,
-    FormControl,
-  } from "@mui/material";
+{
+  Grid,
+  Paper,
+  Button,
+  MenuItem,
+  Select,
+  InputLabel,
+  FormControl,
+  TextareaAutosize,
+} from "@mui/material";
+import { Textarea } from 'evergreen-ui'
 import TextField from "@mui/material/TextField";
 
 const TableForm = () =>
@@ -22,15 +24,9 @@ const TableForm = () =>
     width: "25vw",
   };
   const initial = {
-    text11: "",
-    text12: "",
-    text13: "",
-    text21: "",
-    text22: "",
-    text23: "",
-    text31: "",
-    text32: "",
-    text33: "",
+    num_of_tabs: "",
+    tab_text: "",
+    link_text: ""
   };
   const [formValues, setFormValues] = useState(initial);
   const [formErrors, setFormErrors] = useState([]);
@@ -59,7 +55,7 @@ const TableForm = () =>
   const saveToData = (formValues) =>
   {
     const data = formValues;
-    const url = Links.post_table_api;
+    const url = Links.post_tables_api;
     axios
       .post(url, data)
       .then((response) =>
@@ -106,120 +102,44 @@ const TableForm = () =>
           <form onSubmit={handleSubmit} alignitem={"center"}>
             <TextField
               id="outlined-basic"
-              label="Row1 Column1 Text"
-              placeholder="Enter Text"
+              label="Number of Tabs"
+              placeholder="Enter Number of Tabs You Want"
               variant="outlined"
               fullWidth
               onChange={handleChange}
-              name="text11"
-              value={formValues.text11}
-              error={Boolean(formErrors.text11)}
+              name="num_of_tabs"
+              type="number"
+              value={formValues.num_of_tabs}
+              error={Boolean(formErrors.num_of_tabs)}
               sx={{ marginBottom: "20px" }}
-              helperText={formErrors.text11}
+              helperText={formErrors.num_of_tabs}
             />
-            <TextField
+            <Textarea
               id="outlined-basic"
-              label="Row1 column2 Text"
-              placeholder="Enter Text"
+              label="tab_text"
+              placeholder="Enter Text For Tabs"
               variant="outlined"
               fullWidth
               onChange={handleChange}
-              name="text12"
-              value={formValues.text12}
-              error={Boolean(formErrors.text12)}
+              name="tab_text"
+              value={formValues.tab_text}
+              error={Boolean(formErrors.tab_text)}
               sx={{ marginBottom: "20px" }}
-              helperText={formErrors.text12}
+              helperText={formErrors.tab_text}
             />
-            <TextField
+
+            <Textarea
               id="outlined-basic"
-              label="Row1 Column3 Text"
-              placeholder="Enter Text"
+              label="link_text"
+              placeholder="Enter Links For Tabs"
               variant="outlined"
               fullWidth
               onChange={handleChange}
-              name="text13"
-              value={formValues.text13}
-              error={Boolean(formErrors.text13)}
+              name="link_text"
+              value={formValues.link_text}
+              error={Boolean(formErrors.link_text)}
               sx={{ marginBottom: "20px" }}
-              helperText={formErrors.text13}
-            />
-            <TextField
-              id="outlined-basic"
-              label="Row2 Column1 Text"
-              placeholder="Enter Text"
-              variant="outlined"
-              fullWidth
-              onChange={handleChange}
-              name="text21"
-              value={formValues.text21}
-              error={Boolean(formErrors.text21)}
-              sx={{ marginBottom: "20px" }}
-              helperText={formErrors.text21}
-            />
-            <TextField
-              id="outlined-basic"
-              label="Row2 column2 Text"
-              placeholder="Enter Text"
-              variant="outlined"
-              fullWidth
-              onChange={handleChange}
-              name="text22"
-              value={formValues.text22}
-              error={Boolean(formErrors.text22)}
-              sx={{ marginBottom: "20px" }}
-              helperText={formErrors.text22}
-            />
-            <TextField
-              id="outlined-basic"
-              label="Row2 Column3 Text"
-              placeholder="Enter Text"
-              variant="outlined"
-              fullWidth
-              onChange={handleChange}
-              name="text23"
-              value={formValues.text23}
-              error={Boolean(formErrors.text23)}
-              sx={{ marginBottom: "20px" }}
-              helperText={formErrors.text23}
-            />
-            <TextField
-              id="outlined-basic"
-              label="Row3 Column1 Text"
-              placeholder="Enter Text"
-              variant="outlined"
-              fullWidth
-              onChange={handleChange}
-              name="text31"
-              value={formValues.text31}
-              error={Boolean(formErrors.text31)}
-              sx={{ marginBottom: "20px" }}
-              helperText={formErrors.text31}
-            />
-            <TextField
-              id="outlined-basic"
-              label="Row3 column2 Text"
-              placeholder="Enter Text"
-              variant="outlined"
-              fullWidth
-              onChange={handleChange}
-              name="text32"
-              value={formValues.text32}
-              error={Boolean(formErrors.text32)}
-              sx={{ marginBottom: "20px" }}
-              helperText={formErrors.text32}
-            />
-            <TextField
-              id="outlined-basic"
-              label="Row3 Column3 Text"
-              placeholder="Enter Text"
-              variant="outlined"
-              fullWidth
-              onChange={handleChange}
-              name="text33"
-              value={formValues.text33}
-              error={Boolean(formErrors.text33)}
-              sx={{ marginBottom: "20px" }}
-              helperText={formErrors.text33}
+              helperText={formErrors.link_text}
             />
 
             <Button

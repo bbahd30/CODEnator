@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 // import { get_button_api } from '../../Links';
-import { get_button_api } from '../../Links';
+import { get_buttons_api } from '../../Links';
+import { Button } from '@mui/material';
 
 const ButtonRenderer = () =>
 {
@@ -9,7 +10,7 @@ const ButtonRenderer = () =>
 
     const fetchButtonData = () =>
     {
-        const url = get_button_api;
+        const url = get_buttons_api;
         axios
             .get
             (
