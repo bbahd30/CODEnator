@@ -17,6 +17,7 @@ import ButtonForm from './Forms/ButtonForm';
 import './mainfile.css';
 
 import { Link } from 'react-router-dom';
+import TableForm from './Forms/TableForm';
 
 const MainFile = () =>
 {
@@ -77,7 +78,8 @@ const MainFile = () =>
         'image': <ImageForm />,
         'navbar': <NavbarForm />,
         'button': <ButtonForm />,
-        'dropdown': <DropdownForm />
+        'dropdown': <DropdownForm />,
+        'table': <TableForm />
 
     }
     const keywords =

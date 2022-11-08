@@ -35,7 +35,8 @@ def userimage_uploader(request):
 
 def store(request):
     # component = ['image', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'anchor', 'hr', 'button', 'dropdown', 'navbar', 'paragraph' ]
-    Tag.objects.create(tags_dict=components)
+    component = ['table', 'paragraph']
+    Tag.objects.create(tags_dict=component)
     components.clear()
     return redirect('http://127.0.0.1:3000/')
 

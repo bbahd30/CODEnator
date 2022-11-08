@@ -47,7 +47,11 @@ const NavbarRenderer = () =>
     });
     useEffect(() =>
     {
-        const componentCode = navbar.opening_tag + navbar.text + navbar.closing_tag;
+        if (navbar != null)
+        {
+            const componentCode = navbar.opening_tag + navbar.text + navbar.closing_tag;
+        }
+        // todo: need to add this to a file
     }, [navbar])
     let i = 0;
 
