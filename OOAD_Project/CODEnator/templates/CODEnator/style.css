@@ -1,0 +1,35 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
+    Liberation Mono, monospace;
+}
+body {
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url(pic1.jpg);
+  background-size: cover;
+}
+div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 1300px;
+  height: 550px;
+}
+
+h1 {
+  color: aliceblue;
+  font-weight: bold;
+  text-align: center;
+    font-size: 70px;
+
+}
+button{
+    display: block;
+}
