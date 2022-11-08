@@ -5,10 +5,12 @@ class ImageForm(forms.ModelForm):
     class Meta:
         model = Image
         fields = ['screenshot']
-            # widget = forms.Select(attrs = {'onchange': 'submit();'})
+        labels = {'screenshot': ""}
 
 class UserImageForm(forms.ModelForm):
     class Meta:
         model = UserImage
         fields = ['user_image']
+        labels = {'user_image': ""}
+
 

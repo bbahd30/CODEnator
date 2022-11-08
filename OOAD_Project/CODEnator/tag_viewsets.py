@@ -26,21 +26,41 @@ class H2Viewset(viewsets.ModelViewSet):
     queryset = H2.objects.all()
     serializer_class = H2Serializer
 
+    def get_data(self, request):
+        model_data = H2Serializer(H2.objects.last())
+        return Response(model_data.data)
+
 class H3Viewset(viewsets.ModelViewSet):
     queryset = H3.objects.all()
     serializer_class = H3Serializer
+
+    def get_data(self, request):
+        model_data = H3Serializer(H3.objects.last())
+        return Response(model_data.data)
 
 class H4Viewset(viewsets.ModelViewSet):
     queryset = H4.objects.all()
     serializer_class = H4Serializer
 
+    def get_data(self, request):
+        model_data = H4Serializer(H4.objects.last())
+        return Response(model_data.data)
+
 class H5Viewset(viewsets.ModelViewSet):
     queryset = H5.objects.all()
     serializer_class = H5Serializer
 
+    def get_data(self, request):
+        model_data = H5Serializer(H5.objects.last())
+        return Response(model_data.data)
+
 class H6Viewset(viewsets.ModelViewSet):
     queryset = H6.objects.all()
     serializer_class = H6Serializer
+
+    def get_data(self, request):
+        model_data = H6Serializer(H6.objects.last())
+        return Response(model_data.data)
 
 class ParagraphViewset(viewsets.ModelViewSet):
     queryset = Paragraph.objects.all()
@@ -66,17 +86,19 @@ class UserImageViewset(viewsets.ModelViewSet):
     queryset = UserImage.objects.all()
     serializer_class = UserImageSerializer
 
+    def get_data(self, request):
+        model_data = UserImageSerializer(UserImage.objects.last())
+        return Response(model_data.data)
+
 class NavbarViewset(viewsets.ModelViewSet):
     queryset = Navbar.objects.all()
     serializer_class = NavbarSerializer
 
     def create(self, request):
         data = request.data
-        print("***********88")
-        print(data)
         arr_tabs_text = data.get('tab_text').split("\n")
         arr_tabs_link = data.get('link_text').split("\n")
-        Navbar.objects.create(num_of_tabs = data.get('num_of_tabs'), 
+        Navbar.objects.create( 
         tab_text = arr_tabs_text, link_text = arr_tabs_link)
         return Response("done")
 

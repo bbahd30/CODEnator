@@ -42,7 +42,7 @@ const H1Renderer = () =>
 
     return (
         <div>
-            <h1 style={textAlign: "center",margin:"30px",fontSize:"50px"}>
+            <h1 style={{ textAlign: "center", margin: "30px", fontSize: "50px" }}>
                 {h1.text}
             </h1>
         </div>

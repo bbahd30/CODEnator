@@ -10,6 +10,10 @@ def rename_file(instance,filename):
 class Image(models.Model):
     screenshot = models.ImageField(upload_to = rename_file)
 
+class UserImage(models.Model):
+    opening_tag = models.CharField(max_length=100, default = "<img>")
+    closing_tag = models.CharField(max_length=100, default = "</img>") 
+    user_image = models.ImageField(upload_to = 'user_image', null = True)
 # @receiver(pre_save, sender=Image)
 # def file_update(sender, **kwargs):
 #     upload_folder_instance = kwargs['instance']
@@ -62,11 +66,6 @@ class Anchor(models.Model):
     closing_tag = models.CharField(max_length=100, default = "</a>") 
     link_text = models.CharField(max_length = 400, null = True, blank = True)
     link = models.CharField(max_length = 400, null = True, blank = True)
-
-class UserImage(models.Model):
-    opening_tag = models.CharField(max_length=100, default = "<img>")
-    closing_tag = models.CharField(max_length=100, default = "</img>") 
-    user_image = models.ImageField(upload_to = 'user_image', null = True)
     
 class Navbar(models.Model):
     # num_of_tabs = models.IntegerField( null = True, blank = True)

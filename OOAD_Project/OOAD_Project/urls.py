@@ -31,14 +31,12 @@ router.register(r'dropdowns', views.DropdownViewset, basename='dropdowns'),
 
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include(router.urls)),
     path('upload/', views.uploader),
     path('extract/', views.ui_extract),
-    path('admin/', admin.site.urls),
     path('userimage/', views.userimage_uploader),
-    # path('extract/', views.ui_extract),
-    path('', include(router.urls)),
     path('store/', views.store, name='store'),
-    # path('input/', views.input, name='input'),
     path('imageslatest', views.ImageViewset.as_view
     ({
         'get': 'get_data'

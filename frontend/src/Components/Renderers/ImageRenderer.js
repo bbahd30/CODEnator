@@ -42,9 +42,14 @@ const ImageRenderer = () =>
 
     return (
         <div>
-            <image style={{textAlign: "center",height:"500px",width:"500px"}}>
+            {/* <image style={{textAlign: "center",height:"500px",width:"500px"}}>
                 {image.text}
-            </image>
+            </image> */}
+
+            <img
+                tyle={{ textAlign: "center", height: "500px", width: "500px" }}
+                src={require('../images/bg3.jpg')}
+                width={"80px"} height={"70px"} />
         </div>
     );
 };

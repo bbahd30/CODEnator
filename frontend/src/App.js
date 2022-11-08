@@ -19,9 +19,7 @@ function App()
     <div className="App">
       <BrowserRouter>
         <Routes>
-          {/* <Route path="/" element={<MainFile />} /> */}
-          <Route path="/" element={<DropdownRenderer />} />
-
+          <Route path="/" element={<MainFile />} />
           <Route path="/output" element={<OutputFile />} />
         </Routes>
       </BrowserRouter>

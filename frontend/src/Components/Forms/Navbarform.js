@@ -121,6 +121,7 @@ const NavbarForm = () =>
       }, 4000);
     }
   }, [formErrors]);
+
   return (
     <Grid textAlign={"center"} width="75%">
       <Paper elevation={0} style={paperStyle}>
