@@ -76,10 +76,10 @@ class Navbar(models.Model):
     # tabs to be stored
 
 class Table(models.Model):
-    row = models.IntegerField(null = True, blank = True)
-    col = models.IntegerField(null = True, blank = True)
+    # row = models.IntegerField(null = True, blank = True)
+    # col = models.IntegerField(null = True, blank = True)
+    head_col = models.JSONField(default=list, blank=True, null=True)
     row_data = models.JSONField(default=list, blank=True, null=True)
-    col_data = models.JSONField(default=list, blank=True, null=True)
 
 class Button(models.Model):
     opening_tag = models.CharField(max_length=100, default = "<button>")
