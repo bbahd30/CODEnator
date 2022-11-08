@@ -109,6 +109,19 @@ class NavbarViewset(viewsets.ModelViewSet):
 class TableViewset(viewsets.ModelViewSet):
     queryset = Table.objects.all()
     serializer_class = TableSerializer
+    
+    def create(self, request):
+        data = request.data
+        head_col_arr = data.get('head_col').split(" ")
+        row_data_arr = data.get('row_data').split("\n")
+        Table.objects.create( 
+        head_col = head_col_arr, row_data = row_data_arr)
+        # need to break the row_data by "  " to get the row 
+        return Response("done")
+
+    def get_data(self, request):
+        model_data = TableSerializer(Table.objects.last())
+        return Response(model_data.data)
 
 class ButtonViewset(viewsets.ModelViewSet):
     queryset = Button.objects.all()

@@ -3,8 +3,7 @@
 import React, { useEffect, useState } from "react";
 import * as Links from "../../Links";
 import axios from "axios";
-import
-{
+import {
   Grid,
   Paper,
   Button,
@@ -14,71 +13,60 @@ import
   FormControl,
   TextareaAutosize,
 } from "@mui/material";
-import { Textarea } from 'evergreen-ui'
+import { Textarea } from "evergreen-ui";
 import TextField from "@mui/material/TextField";
 
-const TableForm = () =>
-{
+const TableForm = () => {
   const paperStyle = {
     padding: "10px 20px",
     width: "25vw",
   };
   const initial = {
-    num_of_tabs: "",
+    head_col: "",
     tab_text: "",
-    link_text: ""
+    link_text: "",
   };
   const [formValues, setFormValues] = useState(initial);
   const [formErrors, setFormErrors] = useState([]);
   const [added, setAdded] = useState(false);
   const [isSubmitClicked, setIsSubmitClicked] = useState(false);
 
-  const handleChange = (e) =>
-  {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
 
-  const handleSubmit = (e) =>
-  {
+  const handleSubmit = (e) => {
     setIsSubmitClicked(true);
     e.preventDefault();
     setFormErrors(validate(formValues));
   };
 
-  const validate = (values) =>
-  {
+  const validate = (values) => {
     const errors = {};
     return errors;
   };
 
-  const saveToData = (formValues) =>
-  {
+  const saveToData = (formValues) => {
     const data = formValues;
     const url = Links.post_tables_api;
     axios
       .post(url, data)
-      .then((response) =>
-      {
-        if (response.status == 200 || response.status == 201)
-        {
+      .then((response) => {
+        if (response.status == 200 || response.status == 201) {
           setAdded(true);
         }
       })
-      .catch((error) =>
-      {
+      .catch((error) => {
         console.log(error);
       });
   };
 
-  useEffect(() =>
-  {
-    if (Object.keys(formErrors).length === 0 && isSubmitClicked)
-    {
+  useEffect(() => {
+    if (Object.keys(formErrors).length === 0 && isSubmitClicked) {
       saveToData(formValues);
       setFormValues(initial);
-      setTimeout(() =>
-      {
+      setTimeout(() => {
         setAdded(false);
       }, 4000);
     }
@@ -102,44 +90,30 @@ const TableForm = () =>
           <form onSubmit={handleSubmit} alignitem={"center"}>
             <TextField
               id="outlined-basic"
-              label="Number of Tabs"
-              placeholder="Enter Number of Tabs You Want"
+              label="Name of the Head Columns"
+              placeholder="Enter Name of the Head Columns"
               variant="outlined"
               fullWidth
               onChange={handleChange}
-              name="num_of_tabs"
+              name="head_col"
               type="number"
-              value={formValues.num_of_tabs}
-              error={Boolean(formErrors.num_of_tabs)}
+              value={formValues.head_col}
+              error={Boolean(formErrors.head_col)}
               sx={{ marginBottom: "20px" }}
-              helperText={formErrors.num_of_tabs}
+              helperText={formErrors.head_col}
             />
             <Textarea
               id="outlined-basic"
-              label="tab_text"
-              placeholder="Enter Text For Tabs"
+              label="row_data"
+              placeholder="Enter data for rows row-wise"
               variant="outlined"
               fullWidth
               onChange={handleChange}
-              name="tab_text"
-              value={formValues.tab_text}
-              error={Boolean(formErrors.tab_text)}
+              name="row_data"
+              value={formValues.row_data}
+              error={Boolean(formErrors.row_data)}
               sx={{ marginBottom: "20px" }}
-              helperText={formErrors.tab_text}
-            />
-
-            <Textarea
-              id="outlined-basic"
-              label="link_text"
-              placeholder="Enter Links For Tabs"
-              variant="outlined"
-              fullWidth
-              onChange={handleChange}
-              name="link_text"
-              value={formValues.link_text}
-              error={Boolean(formErrors.link_text)}
-              sx={{ marginBottom: "20px" }}
-              helperText={formErrors.link_text}
+              helperText={formErrors.row_data}
             />
 
             <Button
