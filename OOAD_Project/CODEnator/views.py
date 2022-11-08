@@ -34,8 +34,8 @@ def userimage_uploader(request):
     return render(request, 'CODEnator/userimage.html', {'form': form})
 
 def store(request):
-    component = ['image', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'anchor', 'hr', 'button', 'dropdown', 'navbar', 'paragraph' ]
-    Tag.objects.create(tags_dict=component)
+    # component = ['image', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'anchor', 'hr', 'button', 'dropdown', 'navbar', 'paragraph' ]
+    Tag.objects.create(tags_dict=components)
     components.clear()
     return redirect('http://127.0.0.1:3000/')
 
@@ -302,7 +302,7 @@ def ui_extract(request) :
                             "\t\t<td style=\"border:1px solid black\">12</td>\n"
                             "\t\t</tr>\n"
                             "\t\t</table>)\n")
-            components.append('table')
+            # components.append('table')
         elif i == (127,255,0) :
             f_prg.write("\t<button type=\"button\">Click Me!</button>\n")
             components.append('button')

@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,28 +11,70 @@
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     >
-    <link rel="stylesheet" href="style.css" >
+    <!-- <link rel="stylesheet" href="style.css" > -->
+    <style>        
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
+          Liberation Mono, monospace;
+      }
+      body {
+        background-image: linear-gradient(
+            to top,
+            rgba(88, 17, 110, 0.7),
+            rgba(0, 0, 0, 0.7)
+          ),
+          url('{% static 'pic1.jpg' %}'); 
+          background-size: cover; 
+      }
+      div {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 1300px;
+        height: 550px;
+      }
+
+      h1 {
+        color: aliceblue;
+        font-weight: bold;
+        text-align: center;
+          font-size: 70px;
+      
+      }
+      button{
+          display: block;
+      }
+      a{
+      
+      }
+
+      #id_screenshot
+      {
+        background-color: #9096c3;
+      }
+ </style>
     <title>Document</title>
   </head>
-  <body>
-    <div>
-      <h1>&#60;Image Upload&#62;</h1>
-      <form
-        action=""
-        method="post"
-        enctype="multipart/form-data"
-        onsubmit="return myFunc()"
-      >
-        {% csrf_token %} {{form}}
+    <body >
+      <div>
+        <h1>&#60;Upload Image&#62;</h1>
+        <form
+          action=""
+          method="post"
+          enctype="multipart/form-data"
+          onsubmit="return myFunc()"
+        >
+          {% csrf_token %} {{form}}
+        
+          <button type="submit" class="btn btn-outline-secondary">Submit</button>
+          <a href="../extract">
+            
+            <button type="button" class="btn btn-outline-secondary">Proceed</button></a>
       
-        <br>
-        <button type="submit" class="btn btn-outline-secondary">Proceed to extract</button>
-      </form>
-
-    <script>
-    function myFunc() {
-     location.assign("https://www.w3schools.com");
-      return false;}
-</script>
-  </body>
+        </form>
+    </body>
 </html>

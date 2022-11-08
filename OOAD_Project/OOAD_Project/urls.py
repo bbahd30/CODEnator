@@ -5,6 +5,7 @@ from . import settings
 from CODEnator import views
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 router = DefaultRouter()
@@ -100,5 +101,7 @@ urlpatterns = [
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+
+urlpatterns += staticfiles_urlpatterns()
 
 print(static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT))
