@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
-import {
+import
+{
   AppBar,
   Avatar,
   Button,
@@ -20,14 +21,16 @@ import ButtonForm from "./Components/Forms/ButtonForm";
 import ButtonRenderer from "./Components/Renderers/ButtonRenderer";
 import DropdownForm from "./Components/Forms/DropdownForm";
 import DropdownRenderer from "./Components/Renderers/DropdownRenderer";
+import TableRenderer from "./Components/Renderers/TableRenderer";
 
-function App() {
+function App()
+{
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<TableForm />} />
-          {/* <Route path="/" element={<MainFile />} /> */}
+          {/* <Route path="/" element={<TableRenderer />} /> */}
+          <Route path="/" element={<MainFile />} />
           <Route path="/output" element={<OutputFile />} />
         </Routes>
       </BrowserRouter>
