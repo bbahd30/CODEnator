@@ -15,8 +15,9 @@ function App()
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<TableRenderer />} />
+          <Route path="/" element={<MainFile />} />
           <Route path="/output" element={<OutputFile />} />
+
         </Routes>
       </BrowserRouter>
 

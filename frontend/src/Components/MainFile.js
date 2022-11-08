@@ -78,7 +78,7 @@ const MainFile = () =>
         'image': <ImageForm />,
         'navbar': <NavbarForm />,
         'button': <ButtonForm />,
-        'dropdown': <DropdownForm />,
+        'select': <DropdownForm />,
         'table': <TableForm />
 
     }
@@ -95,7 +95,7 @@ const MainFile = () =>
         'image': "",
         'navbar': "Add details",
         'button': "Add button",
-        'dropdown': "Add links"
+        'select': "Add links"
     }
 
     const index = tags.indexOf('hr');
@@ -136,7 +136,12 @@ const MainFile = () =>
                     }
                     <div className='buttondiv'>
                         <button className='seeoutput'>
-                            <Link to={"../output"}>See output</Link>
+                            <a href='http://127.0.0.1:5500/ui/codefile.html'>See Code</a>
+                        </button>
+                    </div>
+                    <div className='buttondiv'>
+                        <button className='seeoutput'>
+                            <Link to={"../output"}>See Output</Link>
                         </button>
                     </div>
                     {/* </Paper> */}
