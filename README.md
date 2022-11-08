@@ -38,7 +38,7 @@ the detected UI elements like headers, buttons etc. are also generated for the u
 ![image](https://user-images.githubusercontent.com/100669717/200692968-fbd4924b-2f19-4b8e-adfe-d3f99df6d526.png)
 
 
-(IV) `WHO MAINTAINS AND SUPPORTS THIS PROJECT`  - 
+(IV) WHO MAINTAINS AND SUPPORTS THIS PROJECT  - 
 The following stakeholders maintain and support this project - 
 
 (i)	``Bhoomi Bonal`` - @bbahd30
