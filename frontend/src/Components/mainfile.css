@@ -1,0 +1,54 @@
+
+.headingformspage{
+    color: white;
+}
+.line{
+    width: 100%;
+    background-color: white;
+    height: 1.5px;
+    margin-top:-10px;
+}
+.dividepage{
+    height: 100%;
+    display: flex;
+}
+.formdiv{
+    margin: 0px;
+    height: calc(100vh);
+    background-image: url('./images/bg33.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: blue;
+    /* filter: blur(8px); */
+    opacity: 60%;
+    
+}
+.formlist{
+    display: inline-block;
+    height:100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+.seeoutput{
+    background-color: darkblue;
+    opacity: 75%;
+    padding: 8px 30px;
+    border-radius: 10px;
+    border: 1px solid darkblue;
+    transition: all ease-in 0.5s;
+}
+.seeoutput a{
+    color:white;
+    text-decoration: none;
+}
+.seeoutput:hover{
+    opacity: 100%;
+    transition: all ease-in 0.5s;
+    font-weight: bolder;
+}

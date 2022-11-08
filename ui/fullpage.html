@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODEnator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.12/fullpage.min.css"
+        integrity="sha512-W3G0KdDm94gQSRjzg7HWRLBT3lqAcWtWvnb1Eo5Uo7e6RDzhJW2ldmcOQg06cYqaKrrkIp9AjxIJBbMtVYTtQg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="fullpage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+      <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&family=Raleway:wght@800&display=swap" rel="stylesheet">
+
+   
+</head> 
+<body>
+    <div id="fullpage">
+        <section class="section s1">
+            <h1>&#60;CODEnator&#62;</h1>
+            <p>Convert Image to HTML Code</p>
+        </section>
+    
+        <section class="section s2"> 
+            <div class="main">
+                    <div class="text">
+                    <h1>How to Use?</h1>
+                    <ul>
+                        <li>Read the <button type="button" class="btn btn-outline-secondary" onclick="openPopup()">INSTRUCTION SET</button> for input format.</li>  
+                        <li>You have to refer to above instruction set to draw colour filled boxes using ms paint or any other software according to your requirements, and save it as an image.(Warning: It is advised to use the exact code given in the instruction)</li>      
+                        <li>
+                            <button type="button" class="btn btn-outline-secondary"><a href = "http://127.0.0.1:8000/upload">Upload</a>
+                            </button> 
+                </button> the image.
+                    </li>
+                    <!-- <li>
+                        <button>
+                            <a href="http://127.0.0.1:8000/store/"></a>
+                        </button>
+                    </li> -->
+                        <li><button type="button" class="btn btn-outline-secondary">Download</button> the HTML code.</li>
+                    </ul>
+                    </div>
+                <div class="image"><img src="img.png" alt="ml"></div>
+                
+            <div class="popup overflow-auto" id="popup">
+                <h1>INSTRUCTION SET</h1>
+                <table class="table table-borderless">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Component</th>
+                            <th scope="col">RGB-value</th>
+                            <th scope="col">Color-name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>h1</td>
+                            <td>(236,28,36)</td>
+                            <td>Red</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>h2</td>
+                            <td>(255,140,0)</td>
+                            <td>Dark Orange</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>h3</td>
+                            <td>(154,205,50)</td>
+                            <td>Yellow Green</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>h4</td>
+                            <td>(32,178,170)</td>
+                            <td>light sea green</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>h5</td>
+                            <td>(100,149,237)</td>
+                            <td>Corn flower blue</td>
+                        </tr><tr>
+                            <th scope="row">6</th>
+                            <td>h6</td>
+                            <td>(219,112,147)</td>
+                            <td>Pale Violet Red</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">7</th>
+                            <td>p</td>
+                            <td>(255,0,255)</td>
+                            <td>Magneta</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">8</th>
+                            <td>hr</td>
+                            <td>(0,255,0)</td>
+                            <td>Lime</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">9</th>
+                            <td>a</td>
+                            <td>(165,42,42)</td>
+                            <td>Brown</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">10</th>
+                            <td>img</td>
+                            <td>(255,215,0)</td>
+                            <td>Gold</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">11</th>
+                            <td>navbar</td>
+                            <td>(250,128,114)</td>
+                            <td>Salmon</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">12</th>
+                            <td>table</td>
+                            <td>(127,255,212)</td>
+                            <td>Aqua Marine</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">13</th>
+                            <td>button</td>
+                            <td>(127,255,0)</td>
+                            <td>Chartreuse</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">14</th>
+                            <td>dropdown</td>
+                            <td>(88,88,88)</td>
+                            <td>Grey</td>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+                <button class="btn btn-outline-danger" onclick="closePopup()"> close </button>
+            </div>
+        </section>
+        
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.12/fullpage.min.js"
+        integrity="sha512-2N6afhHcaOPaBztibhzvEp9MBtXoG+6YQ5AkllMJKHrZKUUiHHmIc1bEafMDjG+LnTtSIYjaKdg2BdZqqZkkBQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script>
+        new fullpage('#fullpage', {
+            autoScrolling: true,
+            navigation: true,
+            navigationTooltips: ['Home', 'How to use?', 'Upload Image'],
+        });
+    </script>
+    <script>
+        let popup = document.getElementById("popup");
+        function openPopup(){
+            popup.classList.add("open-popup");
+        }
+        function closePopup(){
+            popup.classList.remove("open-popup");
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous">
+    </script>
+
+
+</body>
+</html>
