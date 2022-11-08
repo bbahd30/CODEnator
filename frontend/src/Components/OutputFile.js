@@ -35,7 +35,7 @@ const OutputFile = () =>
         'image': <ImageRenderer />,
         'navbar': <NavbarRenderer />,
         'button': <ButtonRenderer />,
-        'dropdown': <DropdownRenderer />,
+        'select': <DropdownRenderer />,
         'hr': <HrRenderer />,
         'table': <TableRenderer />
     }

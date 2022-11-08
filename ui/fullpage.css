@@ -101,8 +101,16 @@ li {
   font-size: 1rem; 
 }
 
+li a
+{
+  text-decoration: none;
+  color: #6c757d;
+}
+li a:hover
+{
+  color: white;
 
-
+}
 .popup {
   width: 700px;
   height: 600px;

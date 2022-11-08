@@ -14,7 +14,7 @@ from imutils import contours
 my_dict = {}
 components = []
 
-img = cv.imread("/home/bhoomi/CourseProjects/OOAD/OOAD_Project/media/screenshots/UI_extract_file.png")
+img = cv.imread("/home/bhoomi/CourseProjects/OOAD/OOAD_Project/media/screenshots/UI_extract_file.jpg")
 
 def uploader(request):
     if request.method == 'POST':
@@ -34,7 +34,7 @@ def userimage_uploader(request):
     return render(request, 'CODEnator/userimage.html', {'form': form})
 
 def store(request):
-    # component = ['image', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'anchor', 'hr', 'button', 'dropdown', 'navbar', 'paragraph' ]
+    # component = ['image', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'anchor', 'hr', 'button', 'dropdown', 'navbar', 'paragraph', 'table']
     Tag.objects.create(tags_dict=components)
     components.clear()
     return redirect('http://127.0.0.1:3000/')
@@ -240,7 +240,7 @@ def ui_extract(request) :
 
     cv.waitKey(1)
 
-    f_prg = open("program.html", "w")
+    f_prg = open("/home/bhoomi/CourseProjects/OOAD/ui/program.txt", "w")
     f_prg.write("<HTML>\n")
     f_prg.write("<BODY>\n")
     # print("SAHIL")
@@ -265,7 +265,7 @@ def ui_extract(request) :
             f_prg.write("\t<h6>This is Heading</h6>\n")
             components.append('h6')
         elif i == (255,0,255) :
-            f_prg.write("\t<p>lorem*15</p>\n")
+            f_prg.write("\t<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim autem eum eaque quia iure minima maxime harum totam libero saepe quod deleniti ab repellendus accusamus voluptates, repudiandae ullam facilis quam aspernatur itaque natus! Id ratione distinctio hic commodi libero, tenetur facilis culpa voluptatum eaque similique neque eius aliquid dolorem, debitis veritatis expedita! Magnam consequuntur asperiores aliquam saepe omnis delectus beatae magni vero praesentium rerum deserunt, iusto cupiditate veritatis aut eaque ratione amet at, voluptatem autem harum. Nostrum dolorum eveniet eum, inventore quis beatae enim incidunt labore, veniam voluptatem quam minima quod quibusdam nisi ea saepe quasi aspernatur, excepturi dolores modi sed nesciunt. Iusto ullam doloribus iste expedita voluptatum tempore quo. Eaque, dicta suscipit tempore facilis hic nesciunt quisquam incidunt minus animi adipisci fugiat ratione laborum neque pariatur minima repellat modi culpa magni numquam eveniet et molestiae esse expedita. Quas non ipsum perferendis, nisi corporis temporibus dolorum iste voluptatum modi ullam, expedita voluptatem fuga nam ex. Esse animi earum soluta alias repudiandae et obcaecati debitis laborum velit pariatur assumenda, quam nobis, fugit error recusandae sunt perferendis ratione, accusamus dicta ducimus quos similique sint. Voluptates, doloremque! Tenetur aperiam, dicta reiciendis nihil dolore at dolorum ipsa magni, nemo reprehenderit, similique alias aspernatur rem? Facilis amet quaerat incidunt ducimus hic ex soluta voluptatum explicabo impedit deserunt magni iste fugit error accusamus quasi aliquam esse facere a maiores odit totam omnis, eum possimus. Numquam illum, molestiae at excepturi saepe quasi esse beatae voluptate illo fuga nulla, atque eveniet nisi maiores velit laudantium? Dolorem, nesciunt! Iusto exercitationem temporibus incidunt voluptas deleniti aut consequatur distinctio. Magni pariatur esse nemo quia consequuntur exercitationem non fuga nesciunt blanditiis quod omnis optio minima aut corporis amet, molestias accusamus quis ducimus dolore nobis dolores odio saepe. Placeat, pariatur animi iusto nemo inventore nisi numquam earum, ullam facilis, nam sapiente laborum consequatur deserunt harum corporis at quis saepe ipsa perspiciatis similique. Perferendis vel eligendi cupiditate delectus assumenda in nisi, possimus repellat! Laborum iusto quia, aspernatur natus nulla possimus dolores blanditiis animi eum alias voluptates libero vitae deserunt ut temporibus beatae rerum dolor. Culpa, quia voluptatum totam assumenda maxime odit debitis suscipit ipsa, ducimus iste vitae atque modi aliquid reiciendis ipsum porro magnam, non voluptatibus blanditiis odio. Laboriosam eius fuga optio, labore maiores, esse, provident ipsa harum repellat pariatur libero sit nemo! Ea at ipsa illo asperiores, unde perferendis quisquam ab ad tempora facere consequatur, laboriosam officiis quod voluptate itaque similique ex provident adipisci recusandae maiores rerum. Sequi assumenda, facilis unde alias nam rerum dolore repellat, sed provident doloribus consequuntur quam cumque ut culpa nemo maiores vitae odit iusto officiis inventore maxime. Ipsa cum esse officia. Accusantium voluptatum ullam perferendis quaerat illum soluta maiores veniam modi laudantium ut, obcaecati sunt nihil. Eos perspiciatis eius ab aspernatur officiis labore velit quos impedit, est architecto. Eius quam doloremque iusto repellat expedita nobis molestias exercitationem ipsa provident animi doloribus labore asperiores inventore autem fugiat impedit ex, quod a suscipit beatae error laborum non veritatis. Nulla error, delectus facilis deleniti odit nam consequuntur quisquam maxime qui modi!</p>\n")
             components.append('paragraph')
         elif i == (0,255,0) :
             f_prg.write("\t<hr>")

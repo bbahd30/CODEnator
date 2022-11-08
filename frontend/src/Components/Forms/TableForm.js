@@ -14,7 +14,7 @@ import
   FormControl,
   TextareaAutosize,
 } from "@mui/material";
-import { Textarea } from 'evergreen-ui'
+import { Textarea } from "evergreen-ui";
 import TextField from "@mui/material/TextField";
 
 const TableForm = () =>
@@ -24,9 +24,8 @@ const TableForm = () =>
     width: "25vw",
   };
   const initial = {
-    num_of_tabs: "",
-    tab_text: "",
-    link_text: ""
+    head_col: "",
+    row_data: "",
   };
   const [formValues, setFormValues] = useState(initial);
   const [formErrors, setFormErrors] = useState([]);
@@ -102,44 +101,29 @@ const TableForm = () =>
           <form onSubmit={handleSubmit} alignitem={"center"}>
             <TextField
               id="outlined-basic"
-              label="Number of Tabs"
-              placeholder="Enter Number of Tabs You Want"
+              label="Name of the Head Columns"
+              placeholder="Enter Name of the Head Columns"
               variant="outlined"
               fullWidth
               onChange={handleChange}
-              name="num_of_tabs"
-              type="number"
-              value={formValues.num_of_tabs}
-              error={Boolean(formErrors.num_of_tabs)}
+              name="head_col"
+              value={formValues.head_col}
+              error={Boolean(formErrors.head_col)}
               sx={{ marginBottom: "20px" }}
-              helperText={formErrors.num_of_tabs}
+              helperText={formErrors.head_col}
             />
             <Textarea
               id="outlined-basic"
-              label="tab_text"
-              placeholder="Enter Text For Tabs"
+              label="row_data"
+              placeholder="Enter data for rows row-wise"
               variant="outlined"
               fullWidth
               onChange={handleChange}
-              name="tab_text"
-              value={formValues.tab_text}
-              error={Boolean(formErrors.tab_text)}
+              name="row_data"
+              value={formValues.row_data}
+              error={Boolean(formErrors.row_data)}
               sx={{ marginBottom: "20px" }}
-              helperText={formErrors.tab_text}
-            />
-
-            <Textarea
-              id="outlined-basic"
-              label="link_text"
-              placeholder="Enter Links For Tabs"
-              variant="outlined"
-              fullWidth
-              onChange={handleChange}
-              name="link_text"
-              value={formValues.link_text}
-              error={Boolean(formErrors.link_text)}
-              sx={{ marginBottom: "20px" }}
-              helperText={formErrors.link_text}
+              helperText={formErrors.row_data}
             />
 
             <Button

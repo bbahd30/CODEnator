@@ -57,7 +57,7 @@ const NavbarRenderer = () =>
 
     return (
         <>
-            <AppBar position='static'>
+            <AppBar position='static' sx={{ background: '#21b6ae' }}>
                 <Toolbar sx={{
                     display: 'flex',
                     justifyContent: "space-between"

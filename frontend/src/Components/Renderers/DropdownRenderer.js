@@ -42,10 +42,7 @@ const DropdownRenderer = () =>
 
     useEffect(() =>
     {
-        if (dropdown != null)
-        {
-            const componentCode = dropdown.opening_tag + dropdown.options + dropdown.closing_tag;
-        }
+        const componentCode = dropdown.opening_tag + dropdown.options + dropdown.closing_tag;
         // todo: need to add this to a file
     }, [dropdown])
     console.log(dropdown)
